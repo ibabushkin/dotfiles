@@ -1,0 +1,56 @@
+[options]
+font = Deja Vu Sans Mono 10
+audible_bell = false
+visible_bell = false
+mouse_autohide = true
+allow_bold = true
+dynamic_title = true 
+urgent_on_bell = true
+scrollback_lines = 1000
+search_wrap = true
+cursor_blink = off
+browser = firefox
+
+[colors]
+# background = rgba(0, 0, 0, 0.6)
+background = #1c1c1c
+foreground = #657b83
+cursor = #2aa198
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
+
+# base16 below
+
+# foreground = #D8D8D8
+# cursor = #585858
+# highlight = #585858
+# color0 = #181818
+# color1 = #585858
+# color2 = #796838
+# color3 = #888888
+# color4 = #B8B8B8
+# color5 = #D8D8D8
+# color6 = #E8E8E8
+# color7 = #F8F8F8
+# color8 = #AB4642
+# color9 = #FF0606
+# color10 = #F7CA88
+# color11 = #A1B56C
+# color12 = #86C1B9
+# color13 = #7CAFC2
+# color14 = #BA8BAF
+# color15 = #A16946

@@ -1,0 +1,9 @@
+[user]
+	name = Inokentiy Babushkin
+	email = inokentiy.babushkin@googlemail.com
+[core]
+	editor = vim
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = simple
