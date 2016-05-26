@@ -46,7 +46,7 @@ end
 
 -- {{{ variable definitions
 -- themes define colours, icons, and wallpapers
-beautiful.init("/home/thewormkill/.config/awesome/theme.lua")
+beautiful.init("~/.config/awesome/theme.lua")
 
 -- notfication objects for on-demand destroying
 local org_notification = nil
@@ -157,7 +157,7 @@ hide_mouse()
 
 -- create a laucher widget and a main menu with submenus
 mygamemenu = {
-   { "&minecraft", "java -jar /home/thewormkill/Minecraft.jar" },
+   { "&minecraft", "java -jar ~/Minecraft.jar" },
    { "&sauerbraten", "sauerbraten-client" },
    { "&flightgear", "fgo" },
 }
@@ -166,9 +166,9 @@ mymainmenu = awful.menu({
     items = { { "&luakit", "luakit" },
               { "&firefox", "firefox" },
               { "&org",
-                  terminal .. " -e \"vim /home/thewormkill/org/notes.md\"" },
+                  terminal .. " -e \"vim ~/org/notes.md\"" },
               { "&bookmarks",
-                  terminal .. " -e \"vim /home/thewormkill/bookmarks.md\"" },
+                  terminal .. " -e \"vim ~/bookmarks.md\"" },
               { "&weechat", terminal .. " --class Chat -e weechat" },
               { "&telegram", terminal .. " --class Chat -e telegram-cli -A" },
               { "&mumble", "mumble" },
