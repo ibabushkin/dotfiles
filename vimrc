@@ -33,7 +33,7 @@ if has("autocmd")
   filetype off
 
   " init vundle
-  set rtp+=/home/thewormkill/.vim/bundle/vundle/
+  set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
 
   " our plugins
