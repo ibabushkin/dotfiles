@@ -170,7 +170,7 @@ mymainmenu = awful.menu({
               { "&bookmarks",
                   terminal .. " -e \"vim ~/bookmarks.md\"" },
               { "&weechat", terminal .. " --class Chat -e weechat" },
-              { "&telegram", terminal .. " --class Chat -e telegram-cli -A" },
+              { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
               { "&games", mygamemenu },
           }
