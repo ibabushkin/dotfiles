@@ -165,10 +165,8 @@ mygamemenu = {
 mymainmenu = awful.menu({
     items = { { "&luakit", "luakit" },
               { "&firefox", "firefox" },
-              { "&org",
-                  terminal .. " -e \"vim ~/org/notes.md\"" },
-              { "&bookmarks",
-                  terminal .. " -e \"vim ~/bookmarks.md\"" },
+              { "&org", terminal .. " -e \"vim org/notes.md\"" },
+              { "&bookmarks", terminal .. " -e \"vim bookmarks.md\"" },
               { "&weechat", terminal .. " --class Chat -e weechat" },
               { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
