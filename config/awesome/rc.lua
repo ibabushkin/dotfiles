@@ -55,8 +55,7 @@ local weather_notification = nil
 local agenda_command =
     "~/.local/bin/morgue -d -f Pango -s slow ~/org/notes.md ~/org/uni.md"
 local forecast_command =
-    "~/.local/bin/hweather -a $(cat ~/hweather/openweathermap.id) -f Pango \
-    -u Metric -c Aachen -C de"
+    "~/.local/bin/hweather -a $(cat ~/hweather/openweathermap.id) -f Pango -u Metric -c Aachen -C de"
 
 
 -- this is used later as the default terminal and editor to run.
