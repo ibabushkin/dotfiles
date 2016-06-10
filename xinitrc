@@ -1,15 +1,19 @@
 #!/bin/sh
-# $Xorg: xinitrc.cpp,v 1.3 2000/08/17 19:54:30 cpqbld Exp $
-#exec >"$HOME/.xsession-$DISPLAY.log" 2>&
+
+# variables
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# language settings
 export LANG=en_US.UTF-8
 
+# clipboard management
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
+# don't beep
 xset -b
 
 # merge in defaults and keymaps
@@ -18,9 +22,5 @@ xset -b
 [ -f $userresources ] && xrdb -merge $userresources
 [ -f $usermodmap ] && xmodmap $usermodmap
 
-# Start the window manager:
-if [ -z "$DESKTOP_SESSION" -a -x /usr/bin/ck-launch-session ]; then
-  ck-launch-session dbus-launch --exit-with-session awesome
-else
-  exec /usr/bin/awesome
-fi
+# start the window manager:
+exec /usr/bin/awesome
