@@ -57,7 +57,6 @@ local agenda_command =
 local forecast_command =
     "~/.local/bin/hweather -a $(cat ~/hweather/openweathermap.id) -f Pango -u Metric -c Aachen -C de"
 
-
 -- this is used later as the default terminal and editor to run.
 terminal = "termite"
 editor = "vim"
@@ -169,6 +168,7 @@ mymainmenu = awful.menu({
               { "&weechat", terminal .. " --class Chat -e weechat" },
               { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
+              { "w&icd", "wicd-client -n" },
               { "&games", mygamemenu },
           }
       })
