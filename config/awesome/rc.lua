@@ -107,8 +107,10 @@ local layouts =
 
 -- {{{ set wallpaper
 if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, false)
+    if beautiful.wallpaper ~= "hirsch.jpg" then
+        gears.wallpaper.maximized(beautiful.wallpaper, nil, false)
+    else
+        gears.wallpaper.fit(beautiful.wallpaper, nil, theme.bg_color)
     end
 end
 -- }}}
