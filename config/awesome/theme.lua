@@ -89,7 +89,7 @@ theme.titlebar_maximized_button_normal_active =
 theme.titlebar_maximized_button_focus_active =
     "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/thewormkill/.config/awesome/wallpapers/background3.jpg"
+theme.wallpaper = "/home/thewormkill/.config/awesome/wallpapers/hirsch.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
