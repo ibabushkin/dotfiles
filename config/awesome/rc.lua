@@ -170,6 +170,7 @@ mymainmenu = awful.menu({
               { "&weechat", terminal .. " --class Chat -e weechat" },
               { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
+              { "mp&v", "mpv" },
               { "w&icd", "wicd-client -n" },
               { "&games", mygamemenu },
           }

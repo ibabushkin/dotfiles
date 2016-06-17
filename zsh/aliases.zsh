@@ -1,5 +1,3 @@
-alias less=$PAGER
-alias zless=$PAGER
 alias rmdir='rmdir -v'
 alias ln='ln -v'
 alias chmod="chmod -c"

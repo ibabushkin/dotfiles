@@ -47,11 +47,3 @@ detox() {
         command detox "$@"
     fi
 }
-
-man() {
-    if command -v vimmanpager >/dev/null 2>&1; then
-        PAGER="vimmanpager" command man "$@"
-    else
-        command man "$@"
-    fi
-}
