@@ -165,13 +165,13 @@ mygamemenu = {
 mymainmenu = awful.menu({
     items = { { "&luakit", "luakit" },
               { "&firefox", "firefox" },
-              { "&org", terminal .. " -e \"vim org/notes.md\"" },
-              { "&bookmarks", terminal .. " -e \"vim bookmarks.md\"" },
               { "&weechat", terminal .. " --class Chat -e weechat" },
               { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
-              { "mp&v", "mpv" },
               { "w&icd", "wicd-client -n" },
+              { "&org", terminal .. " -e \"vim org/notes.md\"" },
+              { "&bookmarks", terminal .. " -e \"vim bookmarks.md\"" },
+              { "mp&v", "mpv" },
               { "&games", mygamemenu },
           }
       })
@@ -280,6 +280,12 @@ end
 
 -- {{{ key bindings
 globalkeys = awful.util.table.join(
+    -- lock screen
+    awful.key({modkey}, "s",
+        function ()
+            awful.util.spawn("slock")
+        end
+    ),
     -- volume settings
     awful.key({}, "XF86AudioRaiseVolume",
         function ()
