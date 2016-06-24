@@ -159,6 +159,7 @@ hide_mouse()
 mygamemenu = {
    { "&minecraft", "java -jar ~/Minecraft.jar" },
    { "&sauerbraten", "sauerbraten-client" },
+   { "stunt&rally", "stuntrally" },
    { "&flightgear", "fgo" },
 }
 
