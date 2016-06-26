@@ -38,6 +38,8 @@ if has("autocmd")
 
   " our plugins
   Bundle "gmarik/vundle"
+  Bundle "godlygeek/tabular"
+  Bundle "dhruvasagar/vim-table-mode"
   Bundle "MarcWeber/vim-addon-mw-utils"
   Bundle "tomtom/tlib_vim"
   Bundle "garbas/vim-snipmate"
