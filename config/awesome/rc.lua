@@ -287,6 +287,12 @@ globalkeys = awful.util.table.join(
             awful.util.spawn("slock")
         end
     ),
+    -- shutdown
+    awful.key({modkey, "Shift"}, "s",
+        function ()
+            awful.util.spawn("sudo shutdown -h now")
+        end
+    ),
     -- volume settings
     awful.key({}, "XF86AudioRaiseVolume",
         function ()
