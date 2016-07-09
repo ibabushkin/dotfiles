@@ -288,7 +288,7 @@ globalkeys = awful.util.table.join(
         end
     ),
     -- shutdown
-    awful.key({modkey, "Shift"}, "s",
+    awful.key({modkey, "Control"}, "s",
         function ()
             awful.util.spawn("sudo shutdown -h now")
         end
