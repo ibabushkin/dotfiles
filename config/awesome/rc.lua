@@ -59,7 +59,7 @@ local forecast_command =
 
 -- this is used later as the default terminal and editor to run.
 terminal = "termite"
-editor = "vim"
+editor = "nvim"
 
 -- default modkey
 modkey = "Mod4"
@@ -170,8 +170,8 @@ mymainmenu = awful.menu({
               { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
               { "&mumble", "mumble" },
               { "w&icd", "wicd-client -n" },
-              { "&org", terminal .. " -e \"vim org/notes.md\"" },
-              { "&bookmarks", terminal .. " -e \"vim bookmarks.md\"" },
+              { "&org", terminal .. " -e \"nvim org/notes.md\"" },
+              { "&bookmarks", terminal .. " -e \"nvim bookmarks.md\"" },
               { "mp&v", "mpv" },
               { "&games", mygamemenu },
           }
