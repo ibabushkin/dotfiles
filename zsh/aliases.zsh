@@ -8,6 +8,7 @@ alias emacs='echo "Haha, nice try!" && sleep .5 && vim $@'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias ls='ls --color=auto --human-readable --group-directories-first --classify'
+alias vim=nvim
 
 if command -v colordiff > /dev/null 2>&1; then
     alias diff="colordiff -Nuar"

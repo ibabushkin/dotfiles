@@ -1,3 +1,4 @@
+" if in vim, and not neovim:
 " use vim settings, rather than vi settings (much better!)
 " this must be first, because it changes other options as a side effect
 set nocompatible
@@ -171,6 +172,7 @@ nnoremap <C-Z> :InsertTimestampExact
 colorscheme wombat
 
 " change the cursor appearance depending on mode
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
