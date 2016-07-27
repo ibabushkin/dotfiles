@@ -125,6 +125,9 @@ noremap <Right> <NOP>
 vnoremap <Right> <NOP>
 inoremap <Right> <NOP>
 
+" insert tab character when needed
+inoremap <S-Tab> <C-V><Tab>
+
 " give us a nice margin to the window border
 set scrolloff=16
 
