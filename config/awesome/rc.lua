@@ -167,7 +167,7 @@ mymainmenu = awful.menu({
     items = { { "&luakit", "luakit" },
               { "&firefox", "firefox" },
               { "&weechat", terminal .. " --class Chat -e weechat" },
-              { "&telegram", terminal .. " --class Chat -e \"telegram-cli -A\"" },
+              { "&telegram", terminal .. " --class Chat -e \"telegram-cli -N -A\"" },
               { "&mumble", "mumble" },
               { "w&icd", "wicd-client -n" },
               { "&org", terminal .. " -e \"nvim org/notes.md\"" },
