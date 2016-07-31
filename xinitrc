@@ -6,6 +6,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 window_manager=/usr/bin/awesome
+# window_manager=$HOME/.config/gabelstaplerwm/target/release/gabelstaplerwm
 
 # language settings
 export LANG=en_US.UTF-8
