@@ -5,7 +5,7 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-use_gabelstaplerwm=true
+# use_gabelstaplerwm=true
 
 # language settings
 export LANG=en_US.UTF-8
@@ -26,7 +26,8 @@ xset -b
 # start the window manager and possibly some other stuff
 if [ $use_gabelstaplerwm ]; then
   dunst &
-  exec $HOME/.config/gabelstaplerwm/target/release/gabelstaplerwm
+  RUST_LOG=debug exec $HOME/.config/gabelstaplerwm/target/debug/gabelstaplerwm 2>> ~/log |
+  lemonbar -p -g 1366x20+0+0 -B "#1c1c1c" -F "#657b83" -U "#657b83" > /dev/null
 else
   exec /usr/bin/awesome
 fi
