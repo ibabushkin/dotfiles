@@ -1,0 +1,15 @@
+firefox
+uzbl,uzbl-browser
+mumble
+telegram,termite --class Chat -e "telegram-cli -N"
+weechat_local,termite --class Chat -e weechat
+weechat,termite -e "ssh zendikar"
+htop,termite -e htop
+wicd,wicd-client -n
+org,termite -e "nvim ~/org/notes.md"
+bookmarks,termite -e "nvim ~/bookmarks.md"
+mpv
+minecraft,java -jar ~/Minecraft.jar
+sauerbraten,sauerbraten-client
+stuntrally
+flightgear
