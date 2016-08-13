@@ -6,10 +6,10 @@ weechat_local,termite --class Chat -e weechat
 weechat,termite -e "ssh zendikar"
 htop,termite -e htop
 wicd,wicd-client -n
-org,termite -e "nvim ~/org/notes.md"
-bookmarks,termite -e "nvim ~/bookmarks.md"
+org,termite -e "nvim $HOME/org/notes.md"
+bookmarks,termite -e "nvim $HOME/bookmarks.md"
 mpv
-minecraft,java -jar ~/Minecraft.jar
+minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
 stuntrally
 flightgear
