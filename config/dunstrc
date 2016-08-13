@@ -34,7 +34,7 @@
 [shortcuts]
     close = mod4+c
     close_all = mod4+ctrl+c
-    history = mod4+y
+    history = mod4+v
 
 [urgency_low]
     background = "#202020"
@@ -42,8 +42,8 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#202020"
-    foreground = "#f8f8f8"
+    background = "#005577"
+    foreground = "#202020"
     timeout = 20
 
 [urgency_critical]
