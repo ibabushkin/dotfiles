@@ -13,3 +13,4 @@ minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
 stuntrally
 flightgear
+vdrift
