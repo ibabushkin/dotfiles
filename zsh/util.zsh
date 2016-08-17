@@ -10,40 +10,9 @@ escape() {
     printf '%q\n' "$escape_string_input"
 }
 
-confirm() {
-    local answer
-    echo -ne "zsh: sure you want to run that [yN]? "
-    read -q answer
-        echo
-    if [[ "${answer}" =~ ^[Yy]$ ]]; then
-        command "${@}"
-    else
-        return 1
-    fi
-}
-
-confirm_wrapper() {
-    if [ "$1" = '--root' ]; then
-        local as_root='true'
-        shift
-    fi
-
-    local prefix=''
-
-    if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
-        prefix="sudo"
-    fi
-    confirm "${prefix}" "$@"
-}
-
-poweroff() { confirm_wrapper --root $0 "$@"; }
-reboot() { confirm_wrapper --root $0 "$@"; }
-hibernate() { confirm_wrapper --root $0 "$@"; }
-
-detox() {
-    if [ "$#" -ge 1 ]; then
-        confirm detox "$@"
-    else    
-        command detox "$@"
-    fi
+# spawn a notification with a message after some delay
+function alarm () {
+    sleep ${(ps: :)1} # split the first argument on each space (ie. 1m 2s)
+    shift
+    notify-send -u critical -a "alarm" "$*"
 }
