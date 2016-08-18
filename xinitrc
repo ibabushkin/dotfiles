@@ -27,7 +27,7 @@ xset -b
 if [ $use_gabelstaplerwm ]; then
   dunst &
   bgs -z $HOME/dotfiles/background.jpg &
-  RUST_LOG=debug exec $HOME/.config/gabelstaplerwm/target/debug/gabelstaplerwm 2> ~/wm_log |
+  RUST_LOG=debug exec $HOME/.config/gabelstaplerwm/target/release/gabelstaplerwm 2> ~/wm_log |
   lemonbar -p -g 1366x20+0+0 -B "#1c1c1c" -F "#657b83" -U "#657b83" > /dev/null
 else
   exec /usr/bin/awesome
