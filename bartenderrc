@@ -1,5 +1,5 @@
 format = (
-    "%{F#cccccc}%{B#005577}",
+    "%{F#cccccc}%{B#005577}", // tagsets go on the left
     {
         name = "tagset";
     },
@@ -11,11 +11,11 @@ format = (
 
 tagset = {
     type = "fifo";
-    fifo_path = "/home/thewormkill/tmp/tagset_fifo";
+    fifo_path = "~/tmp/tagset_fifo";
 };
 
 clock = {
     type = "timer";
     seconds = 60;
-    command_path = "/home/thewormkill/dotfiles/clock.sh";
+    command_path = "~/dotfiles/clock.sh";
 };
