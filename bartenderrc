@@ -1,0 +1,21 @@
+format = (
+    "%{F#cccccc}%{B#005577}",
+    {
+        name = "tagset";
+    },
+    "%{F#657b83}%{B#1c1c1c}%{r}", // the rest goes on the right
+    {
+        name = "clock";
+    }
+);
+
+tagset = {
+    type = "fifo";
+    fifo_path = "/home/thewormkill/tmp/tagset_fifo";
+};
+
+clock = {
+    type = "timer";
+    seconds = 60;
+    command_path = "/home/thewormkill/dotfiles/clock.sh";
+};
