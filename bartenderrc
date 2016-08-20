@@ -5,6 +5,10 @@ format = (
     },
     "%{F#657b83}%{B#1c1c1c}%{r}", // the rest goes on the right
     {
+        name = "load";
+    },
+    " %{F#005577}::%{F#657b83} ",
+    {
         name = "clock";
     }
 );
@@ -12,6 +16,12 @@ format = (
 tagset = {
     type = "fifo";
     fifo_path = "~/tmp/tagset_fifo";
+};
+
+load = {
+    type = "timer";
+    seconds = 5;
+    command_path = "~/dotfiles/load.sh";
 };
 
 clock = {
