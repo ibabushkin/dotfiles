@@ -3,7 +3,11 @@ format = (
     {
         name = "tagset";
     },
-    "%{F#657b83}%{B#1c1c1c}%{r}", // the rest goes on the right
+    "%{F#ff0606}%{B#1c1c1c}",
+    {
+        name = "mode";
+    },
+    "%{F#657b83}%{r}", // the rest goes on the right
     {
         name = "load";
     },
@@ -18,14 +22,19 @@ tagset = {
     fifo_path = "~/tmp/tagset_fifo";
 };
 
+mode = {
+    type = "fifo";
+    fifo_path = "~/tmp/mode_fifo";
+};
+
 load = {
     type = "timer";
     seconds = 5;
-    command_path = "~/dotfiles/load.sh";
+    command_path = "echo load: $(cat /proc/loadavg | cut -d ' ' -f 1-3)";
 };
 
 clock = {
     type = "timer";
     seconds = 60;
-    command_path = "~/dotfiles/clock.sh";
+    command_path = "date '+[%a %b %d/%gw] %R %Z'";
 };
