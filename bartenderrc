@@ -2,10 +2,12 @@ format = (
     "%{F#cccccc}%{B#005577}", // tagsets go on the left
     {
         name = "tagset";
+        default = "[work/0]";
     },
-    "%{F#ff0606}%{B#1c1c1c}",
+    "%{F#005577}%{B#1c1c1c} :: %{F#ff0606}",
     {
         name = "mode";
+        default = "NORMAL";
     },
     "%{F#657b83}%{r}", // the rest goes on the right
     {
