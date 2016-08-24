@@ -23,12 +23,15 @@ xset -b
 [ -f $userresources ] && xrdb -merge $userresources
 [ -f $usermodmap ] && xmodmap $usermodmap
 
-# start the window manager and possibly some other stuff
+# prepare PATH for rust executables
+PATH=$HOME/.multirust/toolchains/nightly/cargo/bin:$PATH
+
+# start the window manager some other stuff
 if [ $use_gabelstaplerwm ]; then
   dunst &
   bgs -z $HOME/dotfiles/background.jpg &
-  ~/.multirust/toolchains/nightly/cargo/bin/bartender | lemonbar -p -g 1366x20+0+0 -B "#1c1c1c" -F "#657b83" -U "#657b83" > /dev/null &
-  RUST_LOG=debug exec $HOME/.config/gabelstaplerwm/target/release/gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
+  bartender | lemonbar -p -g 1366x20+0+0 > /dev/null &
+  RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
 else
   exec /usr/bin/awesome
 fi
