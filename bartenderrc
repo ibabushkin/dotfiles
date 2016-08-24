@@ -9,7 +9,7 @@ format = (
         name = "mode";
         default = "NORMAL";
     },
-    "%{F#657b83}%{r}", // the rest goes on the right
+    "%{F#005577} //%{r}// %{F#657b83}", // the rest goes on the right
     {
         name = "volume";
     },
