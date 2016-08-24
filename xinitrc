@@ -31,6 +31,7 @@ if [ $use_gabelstaplerwm ]; then
   dunst &
   bgs -z $HOME/dotfiles/background.jpg &
   bartender | lemonbar -p -g 1366x20+0+0 > /dev/null &
+  ~/dotfiles/volume.sh init &
   RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
 else
   exec /usr/bin/awesome
