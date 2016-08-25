@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # variables
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=~/.Xresources
+usermodmap=~/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 use_gabelstaplerwm=true
@@ -24,14 +24,14 @@ xset -b
 [ -f $usermodmap ] && xmodmap $usermodmap
 
 # prepare PATH for rust executables
-PATH=$HOME/.multirust/toolchains/nightly/cargo/bin:$PATH
+PATH=~/.multirust/toolchains/nightly/cargo/bin:$PATH
 
 # start the window manager some other stuff
 if [ $use_gabelstaplerwm ]; then
   dunst &
-  bgs -z $HOME/dotfiles/background.jpg &
+  bgs -z ~/dotfiles/background.jpg &
   bartender | lemonbar -p -g 1366x20+0+0 > /dev/null &
-  ~/dotfiles/volume.sh init &
+  ~/dotfiles/scripts/volume.sh init &
   RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
 else
   exec /usr/bin/awesome
