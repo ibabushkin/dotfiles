@@ -19,6 +19,10 @@ format = (
     },
     " %{F#005577}::%{F#657b83} ",
     {
+        name = "battery";
+    },
+    " %{F#005577}::%{F#657b83} ",
+    {
         name = "clock";
     }
 );
@@ -40,8 +44,14 @@ volume = {
 
 load = {
     type = "timer";
-    seconds = 5;
-    command = "echo load: $(cat /proc/loadavg | cut -d ' ' -f 1-3)";
+    seconds = 1;
+    command = "echo load: [$(cat /proc/loadavg | cut -d ' ' -f 1-3)]";
+};
+
+battery = {
+    type = "timer";
+    seconds = 60;
+    command = "~/dotfiles/scripts/battery.sh";
 };
 
 clock = {

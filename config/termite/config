@@ -4,7 +4,7 @@ audible_bell = false
 visible_bell = false
 mouse_autohide = true
 allow_bold = true
-dynamic_title = true 
+dynamic_title = false
 urgent_on_bell = true
 scrollback_lines = 1000
 search_wrap = true
@@ -12,7 +12,6 @@ cursor_blink = off
 browser = firefox
 
 [colors]
-# background = rgba(0, 0, 0, 0.6)
 background = #1c1c1c
 foreground = #657b83
 cursor = #2aa198
@@ -32,9 +31,6 @@ color12 = #839496
 color13 = #6c71c4
 color14 = #93a1a1
 color15 = #fdf6e3
-
-# base16 below
-
 # foreground = #D8D8D8
 # cursor = #585858
 # highlight = #585858
@@ -54,3 +50,5 @@ color15 = #fdf6e3
 # color13 = #7CAFC2
 # color14 = #BA8BAF
 # color15 = #A16946
+
+# vim: ft=dosini cms=#%s
