@@ -45,7 +45,7 @@ volume = {
 load = {
     type = "timer";
     seconds = 1;
-    command = "echo load: [$(cat /proc/loadavg | cut -d ' ' -f 1-3)]";
+    command = "~/dotfiles/scripts/load.sh";
 };
 
 battery = {
