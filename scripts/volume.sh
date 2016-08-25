@@ -1,3 +1,4 @@
+#!/bin/sh
 if [ $1 = "init" ]; then
     out=$(amixer -c 1 get Master | grep "\[")
 else
