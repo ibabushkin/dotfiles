@@ -55,7 +55,7 @@ load = {
 memory = {
     type = "timer";
     seconds = 2;
-    command = "free -m | awk 'NR==2{printf \"mem: [%s, \", $3 } NR==3{printf \"%s MiB]\", $3 }'";
+    command = "free -m | awk 'NR==2{printf \"mem: [%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'";
 };
 
 battery = {
