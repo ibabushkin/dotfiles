@@ -1,5 +1,5 @@
 format = (
-    "%{F#cccccc}%{B#005577}", // tagsets go on the left
+    "%{F#cccccc}%{B#005577}", // tagsets and mode go on the left
     {
         name = "tagset";
         default = "[work/0]";
@@ -31,39 +31,46 @@ format = (
     }
 );
 
+// tagsets get a FIFO, which gabelstaplerwm's stdout is redirected to
 tagset = {
     type = "fifo";
     fifo_path = "~/tmp/tagset_fifo";
 };
 
+// modes get a FIFO as well, but this one is written to directly
 mode = {
     type = "fifo";
     fifo_path = "~/tmp/mode_fifo";
 };
 
+// same for volume info (accessed from a script)
 volume = {
     type = "fifo";
     fifo_path = "~/tmp/alsa_fifo";
 };
 
+// load is updated each second via a simple script
 load = {
     type = "timer";
     seconds = 1;
     command = "~/dotfiles/scripts/load.sh";
 };
 
+// look up memory usage each two seconds
 memory = {
     type = "timer";
     seconds = 2;
     command = "free -m | awk 'NR==2{printf \"mem: [%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'";
 };
 
+// check battery status each minute
 battery = {
     type = "timer";
     seconds = 60;
     command = "~/dotfiles/scripts/battery.sh";
 };
 
+// check time each minute (TODO: sync)
 clock = {
     type = "timer";
     seconds = 60;
