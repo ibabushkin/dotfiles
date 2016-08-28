@@ -24,7 +24,7 @@ xset -b
 [ -f $usermodmap ] && xmodmap $usermodmap
 
 # prepare PATH for rust executables
-PATH=~/.multirust/toolchains/nightly/cargo/bin:$PATH
+PATH=~/.multirust/toolchains/nightly/cargo/bin:~/.local/bin:$PATH
 
 # start the window manager some other stuff
 if [ $use_gabelstaplerwm ]; then
