@@ -23,7 +23,7 @@
     horizontal_padding = 8
     separator_color = frame
     startup_notification = false
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/dmenu -y 20 -p dunst:
     browser = /usr/bin/firefox -new-tab
     icon_position = off
 
@@ -37,13 +37,13 @@
     history = mod4+v
 
 [urgency_low]
-    background = "#202020"
-    foreground = "#b8b8b8"
+    background = "#1c1c1c"
+    foreground = "#cccccc"
     timeout = 10
 
 [urgency_normal]
     background = "#005577"
-    foreground = "#202020"
+    foreground = "#1c1c1c"
     timeout = 20
 
 [urgency_critical]
