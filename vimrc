@@ -85,7 +85,7 @@ set clipboard=unnamedplus
 
 " show some special characters
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:>\ ,eol:¬
 
 " show us the commands we type
 set showcmd
