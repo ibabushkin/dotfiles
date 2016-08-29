@@ -70,7 +70,7 @@ battery = {
     command = "~/dotfiles/scripts/battery.sh";
 };
 
-// check time each minute (TODO: sync)
+// check time each minute
 clock = {
     type = "timer";
     seconds = 60;
