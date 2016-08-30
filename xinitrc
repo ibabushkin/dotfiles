@@ -26,12 +26,11 @@ xset -b
 # prepare PATH for rust executables
 PATH=~/.multirust/toolchains/nightly/cargo/bin:~/.local/bin:$PATH
 
-# start the window manager some other stuff
+# start the window manager and some other stuff
 if [ $use_gabelstaplerwm ]; then
-  dunst &
+  ~/dotfiles/scripts/control.sh start bar
+  ~/dotfiles/scripts/control.sh start dunst
   bgs -z ~/dotfiles/background.jpg &
-  bartender | lemonbar -p -g 1366x20+0+0 > /dev/null &
-  ~/dotfiles/scripts/volume.sh init &
   swarp 0 768 &
   RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
 else
