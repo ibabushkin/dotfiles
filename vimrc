@@ -50,6 +50,7 @@ if has("autocmd")
   Bundle "rust-lang/rust.vim"
   Bundle "neovimhaskell/haskell-vim"
   Bundle "cespare/vim-toml"
+  Bundle "neomake/neomake"
 
   filetype plugin indent on
 
@@ -153,12 +154,12 @@ noremap <Down> :bp<CR>
 nnoremap gb :ls<CR>:b<Space>
 
 " haskell highlighting and indentation
-let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
-let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
-let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
-let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
-let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_enable_quantification = 1
+let g:haskell_enable_recursivedo = 1
+let g:haskell_enable_arrowsyntax = 1
+let g:haskell_enable_pattern_synonyms = 1
+let g:haskell_enable_typeroles = 1
+let g:haskell_enable_static_pointers = 1
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 2
 let g:haskell_indent_let = 4
@@ -166,6 +167,20 @@ let g:haskell_indent_where = 6
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 4
+
+" run neomake on save
+autocmd! BufWritePost * Neomake
+
+" enabled makers
+let g:neomake_haskell_enabled_makers = ['hlint', 'hdevtools']
+
+" let g:neomake_rust_clippy_maker = {
+"     \ 'exe': 'cargo',
+"     \ 'args': ['clippy'],
+"     \ 'errorformat': '',
+"     \ 'append_file': 0
+"     \ }
+" let g:neomake_rust_enabled_makers = ['clippy']
 
 " map timestamp functions to keys
 nnoremap <C-T> :InsertTimestamp
