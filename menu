@@ -11,6 +11,5 @@ bookmarks,termite -e "nvim $HOME/bookmarks.md"
 mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
-stuntrally,stuntrally
 flightgear,fgo
 vdrift,vdrift
