@@ -31,24 +31,5 @@ color12 = #839496
 color13 = #6c71c4
 color14 = #93a1a1
 color15 = #fdf6e3
-# foreground = #D8D8D8
-# cursor = #585858
-# highlight = #585858
-# color0 = #181818
-# color1 = #585858
-# color2 = #796838
-# color3 = #888888
-# color4 = #B8B8B8
-# color5 = #D8D8D8
-# color6 = #E8E8E8
-# color7 = #F8F8F8
-# color8 = #AB4642
-# color9 = #FF0606
-# color10 = #F7CA88
-# color11 = #A1B56C
-# color12 = #86C1B9
-# color13 = #7CAFC2
-# color14 = #BA8BAF
-# color15 = #A16946
 
 # vim: ft=dosini cms=#%s
