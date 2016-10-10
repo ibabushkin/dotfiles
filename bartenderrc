@@ -75,5 +75,5 @@ clock = {
     type = "timer";
     seconds = 60;
     sync = true;
-    command = "date '+[%a %b %d/%gw] %R %Z'";
+    command = "date '+[%a %b %d/%Vw] %R %Z'";
 };
