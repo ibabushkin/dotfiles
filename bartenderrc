@@ -73,7 +73,7 @@ battery = {
 // check time each minute
 clock = {
     type = "timer";
-    seconds = 60;
+    seconds = 5;
     sync = true;
-    command = "date '+[%a %b %d/%Vw] %R %Z'";
+    command = "date '+[%a %b %d/%Vw] %R.%S %Z'";
 };
