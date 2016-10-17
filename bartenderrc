@@ -1,79 +1,53 @@
-format = (
-    "%{F#cccccc}%{B#005577}", // tagsets and mode go on the left
-    {
-        name = "tagset";
-        default = "[work/0]";
-    },
-    "%{F#005577}%{B#1c1c1c} :: %{F#ff0606}",
-    {
-        name = "mode";
-        default = "NORMAL";
-    },
-    "%{F#005577} //%{r}// %{F#657b83}", // the rest goes on the right
-    {
-        name = "volume";
-    },
-    " %{F#005577}::%{F#657b83} ",
-    {
-        name = "load";
-    },
-    " %{F#005577}::%{F#657b83} ",
-    {
-        name = "memory";
-    },
-    " %{F#005577}::%{F#657b83} ",
-    {
-        name = "battery";
-    },
-    " %{F#005577}::%{F#657b83} ",
-    {
-        name = "clock";
-    }
-);
+# our format string
+format = """
+%{F#cccccc}%{B#005577}
+{{{ tagset }}}
+%{F#005577}%{B#1c1c1c} :: %{F#ff0606}
+{{{ mode }}}
+%{F#005577} //%{r}// %{F#657b83}
+{{{ volume }}}
+%{F#005577} :: %{F#657b83}
+{{{ load }}}
+%{F#005577} :: %{F#657b83}
+{{{ memory }}}
+%{F#005577} :: %{F#657b83}
+{{{ battery }}}
+%{F#005577} :: %{F#657b83}
+{{{ clock }}}
+"""
 
-// tagsets get a FIFO, which gabelstaplerwm's stdout is redirected to
-tagset = {
-    type = "fifo";
-    fifo_path = "~/tmp/tagset_fifo";
-};
+# tagsets get a FIFO, which gabelstaplerwm's stdout is redirected to
+[fifos.tagset]
+fifo_path = "~/tmp/tagset_fifo"
+default = "[work/0]"
 
-// modes get a FIFO as well, but this one is written to directly
-mode = {
-    type = "fifo";
-    fifo_path = "~/tmp/mode_fifo";
-};
+# modes get a FIFO as well, but this one is written to directly
+[fifos.mode]
+fifo_path = "~/tmp/mode_fifo"
+default = "NORMAL"
 
-// same for volume info (accessed from a script)
-volume = {
-    type = "fifo";
-    fifo_path = "~/tmp/alsa_fifo";
-};
+# same for volume info (accessed from a script)
+[fifos.volume]
+fifo_path = "~/tmp/alsa_fifo"
 
-// load is updated each second via a simple script
-load = {
-    type = "timer";
-    seconds = 1;
-    command = "~/dotfiles/scripts/load.sh";
-};
+# load is updated each second via a simple script
+[timers.load]
+seconds = 1
+command = "~/dotfiles/scripts/load.sh"
 
-// look up memory usage each two seconds
-memory = {
-    type = "timer";
-    seconds = 2;
-    command = "free -m | awk 'NR==2{printf \"mem: [%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'";
-};
+# memory consumption is computed inline
+[timers.memory]
+seconds = 2
+command = "free -m | awk 'NR==2{printf \"mem: [%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'"
 
-// check battery status each minute
-battery = {
-    type = "timer";
-    seconds = 60;
-    command = "~/dotfiles/scripts/battery.sh";
-};
+# battery status is polled much less frequently
+[timers.battery]
+minutes = 1
+command = "~/dotfiles/scripts/battery.sh"
 
-// check time each minute
-clock = {
-    type = "timer";
-    seconds = 5;
-    sync = true;
-    command = "date '+[%a %b %d/%Vw] %R.%S %Z'";
-};
+# we also get a clock with five-second precision
+[timers.clock]
+seconds = 5
+command = "date '+[%a %b %d/%Vw] %R.%S %Z'"
+
+# vim: set ft=toml:
