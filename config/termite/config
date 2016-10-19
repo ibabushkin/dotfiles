@@ -1,5 +1,6 @@
 [options]
-font = Deja Vu Sans Mono 10
+# font = Deja Vu Sans Mono 10
+font = Termsyn 12
 audible_bell = false
 visible_bell = false
 mouse_autohide = true
