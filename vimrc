@@ -174,13 +174,27 @@ autocmd! BufWritePost * Neomake
 " enabled makers
 let g:neomake_haskell_enabled_makers = ['hlint', 'hdevtools']
 
-" let g:neomake_rust_clippy_maker = {
-"     \ 'exe': 'cargo',
-"     \ 'args': ['clippy'],
-"     \ 'errorformat': '',
-"     \ 'append_file': 0
-"     \ }
-" let g:neomake_rust_enabled_makers = ['clippy']
+" make neomake's error symbols nicer
+let g:neomake_error_sign = {'text': 'E', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': 'W', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': 'M', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign = {'text': 'M', 'texthl': 'NeomakeInfoSign'}
+
+" highlighting of neomake's warnings and errors
+augroup my_error_signs
+  au!
+  autocmd ColorScheme * hi NeomakeErrorSign ctermbg=black
+augroup END
+augroup my_warning_signs
+  au!
+  autocmd ColorScheme * hi NeomakeWarningSign ctermbg=black
+augroup END
+augroup my_message_signs
+  au!
+  autocmd ColorScheme * hi NeomakeMessageSign ctermbg=234
+augroup my_info_signs
+  au!
+  autocmd ColorScheme * hi NeomakeInfoSign ctermbg=234
 
 " map timestamp functions to keys
 nnoremap <C-T> :InsertTimestamp
