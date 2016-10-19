@@ -26,7 +26,7 @@ if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
 # le features!
 
 # awesome extended globbing
-setopt extendedGlob
+setopt extended_glob
 
 # zmv -  a command for renaming files by means of shell patterns
 autoload -U zmv
@@ -103,40 +103,51 @@ if [ -f ~/.alert ]; then echo '>>> Check ~/.alert'; fi
 # colors for ls
 eval $(dircolors ~/.dircolors)
 
-# prompt
-setopt prompt_subst
-
 # mode-aware arrow
 function p_arrow {
   if [[ $KEYMAP = "vicmd" ]]; then
-    echo "%F{magenta}>%f"
+    echo "%{%F{magenta}%}>%{%f%}"
   else
-    echo "%F{cyan}>%f"
+    echo "%{%F{cyan}%}>%{%f%}"
   fi
 }
 
 # RPROMPT shows status info such as time and return code
 function p_status {
   if [ $? -ne 0 ]; then
-    echo "%F{red}[%?]%f%F{green}[%f%T%F{green}]%f "
+    echo "%{%F{red}%}[%?]%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
   else
-    echo "%F{green}[%f%T%F{green}]%f "
+    echo "%{%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
   fi
-}
-
-# colored path
-function p_colored_path {
-  local slash="%F{cyan}/%f"
-  echo " ${${PWD/#$HOME/~}//\//$slash}"
 }
 
 # git info
 function p_vcs {
-  zstyle ':vcs_info:git*' formats " [%s:%F{green}%b%f]%F{red}%u%f%F{yellow}%c%f"
+  zstyle ':vcs_info:git*' formats "%{%F{cyan}%}-%{%f%}[%s:%{%F{green}%}%b%{%f%}]%{%F{red}%}%u%{%f%F{yellow}%}%c%{%f%}"
   zstyle ':vcs_info:git*' check-for-changes 1
   vcs_info
   echo $vcs_info_msg_0_
 }
 
-PROMPT='%F{blue}λ%f$(p_colored_path)$(p_vcs) $(p_arrow) '
-RPROMPT='$(p_status)'
+function precmd {
+  PR_FILLBAR=""
+  PR_PWDLEN=""
+
+  slash="%{%F{cyan}%}%{/%f%}"
+  current_path="${PWD/#$HOME/~}"
+
+  local str="┌($current_path)$(p_vcs)$(p_status)¬"
+  local zero='%([BSUbfksu]|([FBK]|){*})'
+  local size=${#${(S%%)str//$~zero/}}
+
+  if [[ "$size" -gt $COLUMNS ]]; then
+    ((PR_PWDLEN=$COLUMNS - $size - 1))
+  else
+    PR_FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
+  fi
+}
+
+setopt prompt_subst
+PROMPT='\
+%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}$(p_status)%{%F{cyan}%}¬
+└-%{%f%}$(p_arrow) '
