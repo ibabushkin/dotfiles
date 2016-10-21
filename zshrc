@@ -37,6 +37,9 @@ autoload -U zargs
 # gather version control info
 autoload -Uz vcs_info
 
+# don't. fucking. beep.
+setopt nobeep
+
 # turn on command substitution in the prompt
 # (and parameter expansion and arithmetic expansion)
 setopt promptsubst
