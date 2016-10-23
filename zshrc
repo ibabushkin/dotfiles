@@ -148,6 +148,8 @@ function precmd {
   else
     PR_FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
   fi
+
+  echo ""
 }
 
 setopt prompt_subst

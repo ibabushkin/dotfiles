@@ -51,6 +51,7 @@ if has("autocmd")
   Bundle "neovimhaskell/haskell-vim"
   Bundle "cespare/vim-toml"
   Bundle "neomake/neomake"
+  Bundle "vim-scripts/octave.vim--"
 
   filetype plugin indent on
 
