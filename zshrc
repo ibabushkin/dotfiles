@@ -152,7 +152,6 @@ function precmd {
   echo ""
 }
 
-setopt prompt_subst
 PROMPT='\
 %{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}$(p_status)%{%F{cyan}%}¬
 └-%{%f%}$(p_arrow) '
