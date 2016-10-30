@@ -2,7 +2,7 @@ firefox,firefox
 uzbl,uzbl-browser
 mumble,mumble
 telegram,termite --class Chat -e "telegram-cli -N"
-weechat_local,termite --class Chat -e weechat
+weechat_local,termite --class Chat -e "$HOME/dotfiles/scripts/tmux.sh"
 weechat,termite --class Chat -e "ssh zendikar"
 octave,octave
 htop,termite --class Mon -e htop
