@@ -3,7 +3,7 @@ uzbl,uzbl-browser
 mumble,mumble
 telegram,termite --class Chat -e "telegram-cli -N"
 weechat_local,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh"
-weechat,termite --class Chat -e "ssh zendikar"
+weechat,termite --class Chat -e "ssh twk@toaster '/home/twk/weechat.sh'"
 octave,octave
 htop,termite --class Mon -e htop
 org,termite -e "nvim $HOME/org/notes.md"
