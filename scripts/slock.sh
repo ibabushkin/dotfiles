@@ -1,2 +1,2 @@
 #!/bin/sh
-./pom.sh -p && slock && ./pom.sh -p
+~/dotfiles/scripts/pom.sh -p && slock && ~/dotfiles/scripts/pom.sh -p
