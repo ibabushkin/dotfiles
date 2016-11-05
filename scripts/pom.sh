@@ -9,6 +9,7 @@ elif [[ $1 == "-p" ]]; then
 elif [[ $1 == "-t" ]]; then
   if [[ $pid != "" ]]; then
     kill -s "TERM" $pid
+    notify-send -a spt spt "stopped working!"
   else
     spt
   fi
