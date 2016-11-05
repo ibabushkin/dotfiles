@@ -6,7 +6,7 @@ weechat_local,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh"
 weechat,termite --class Chat -e "ssh twk@toaster '/home/twk/weechat.sh'"
 octave,octave
 htop,termite --class Mon -e htop
-org,termite -e "nvim $HOME/org/notes.md"
+org,termite --class Org -e "nvim $HOME/org/notes.md"
 bookmarks,termite -e "nvim $HOME/bookmarks.md"
 mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
