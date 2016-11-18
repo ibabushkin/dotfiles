@@ -133,13 +133,14 @@ function p_vcs {
 }
 
 function precmd {
+  s="$(p_status)"
   PR_FILLBAR=""
   PR_PWDLEN=""
 
   slash="%{%F{cyan}%}%{/%f%}"
   current_path="${PWD/#$HOME/~}"
 
-  local str="┌($current_path)$(p_vcs)$(p_status)¬"
+  local str="┌($current_path)$(p_vcs)$s¬"
   local zero='%([BSUbfksu]|([FBK]|){*})'
   local size=${#${(S%%)str//$~zero/}}
 
@@ -153,5 +154,5 @@ function precmd {
 }
 
 PROMPT='\
-%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}$(p_status)%{%F{cyan}%}¬
+%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}${s}%{%F{cyan}%}¬
 └-%{%f%}$(p_arrow) '
