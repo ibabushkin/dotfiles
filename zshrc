@@ -115,10 +115,11 @@ function p_arrow {
   fi
 }
 
-# RPROMPT shows status info such as time and return code
+# status info such as time and return code
 function p_status {
-  if [ $? -ne 0 ]; then
-    echo "%{%F{red}%}[%?]%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
+  local res=$?
+  if [ $res -ne 0 ]; then
+    echo "%{%F{red}%}[$res]%{%f%F{cyan}%}-%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
   else
     echo "%{%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
   fi
@@ -141,10 +142,11 @@ function precmd {
   current_path="${PWD/#$HOME/~}"
 
   local str="┌($current_path)$(p_vcs)$s¬"
+  # filter prompt expansion directives for length calculation
   local zero='%([BSUbfksu]|([FBK]|){*})'
   local size=${#${(S%%)str//$~zero/}}
 
-  if [[ "$size" -gt $COLUMNS ]]; then
+  if [[ $size -gt $COLUMNS ]]; then
     ((PR_PWDLEN=$COLUMNS - $size - 1))
   else
     PR_FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
@@ -154,5 +156,5 @@ function precmd {
 }
 
 PROMPT='\
-%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}${s}%{%F{cyan}%}¬
+%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}$s%{%F{cyan}%}¬
 └-%{%f%}$(p_arrow) '
