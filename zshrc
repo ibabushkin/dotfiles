@@ -135,8 +135,8 @@ function p_vcs {
 
 function precmd {
   s="$(p_status)"
-  PR_FILLBAR=""
-  PR_PWDLEN=""
+  FILLBAR=""
+  PWDLEN=""
 
   slash="%{%F{cyan}%}%{/%f%}"
   current_path="${PWD/#$HOME/~}"
@@ -147,14 +147,14 @@ function precmd {
   local size=${#${(S%%)str//$~zero/}}
 
   if [[ $size -gt $COLUMNS ]]; then
-    ((PR_PWDLEN=$COLUMNS - $size - 1))
+    ((PWDLEN=$COLUMNS - $size - 1))
   else
-    PR_FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
+    FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
   fi
 
   echo ""
 }
 
 PROMPT='\
-%{%F{cyan}%}┌%{%f%}(%$PR_PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)PR_FILLBAR}$s%{%F{cyan}%}¬
+%{%F{cyan}%}┌%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{cyan}%}¬
 └-%{%f%}$(p_arrow) '
