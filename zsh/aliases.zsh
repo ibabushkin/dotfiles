@@ -9,6 +9,8 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias vim=nvim
+alias dump='~/dotfiles/scripts/dump.sh'
+alias control='~/dotfiles/scripts/control.sh'
 
 if command -v colordiff > /dev/null 2>&1; then
     alias diff="colordiff -Nuar"
