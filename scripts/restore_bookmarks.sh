@@ -9,6 +9,6 @@ shift
 sed -r "s/^# .*$//
 	s/^ *\* (.* :: )*//" $@ | while read line; do
 	case "$line" in
-		http*) $program $line 2&>1 > /dev/null & ;;
+		http*) $program $line 2>&1 > /dev/null & ;;
 	esac
 done
