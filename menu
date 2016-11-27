@@ -7,7 +7,7 @@ weechat,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh --remote"
 octave,octave
 htop,termite --class Mon -e htop
 org,termite --class Org -e "nvim $HOME/org/notes.md"
-bookmarks,termite -e "nvim $HOME/bookmarks.md"
+bookmarks,termite --class Org -e "nvim $HOME/org/bm/main.md"
 mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
