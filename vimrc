@@ -201,6 +201,13 @@ augroup my_info_signs
 nnoremap <C-T> :InsertTimestamp
 nnoremap <C-Z> :InsertTimestampExact
 
+" map bookmark loading to a key
+nnoremap <C-L> :!$HOME/dotfiles/scripts/restore_bookmarks.sh firefox %
+
+" set up our file explorer
+let g:netrw_banner = 0
+let g:netrw_winsize = 30
+
 " use our colorscheme
 colorscheme wombat
 

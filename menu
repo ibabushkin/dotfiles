@@ -4,10 +4,9 @@ mumble,mumble
 telegram,termite --class Chat -e "telegram-cli -N"
 weechat_local,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh"
 weechat,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh --remote"
-octave,octave
 htop,termite --class Mon -e htop
-org,termite --class Org -e "nvim $HOME/org/notes.md"
-bookmarks,termite --class Org -e "nvim $HOME/org/bm/main.md"
+org,termite --class Org -e "nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md"
+bookmarks,termite --class Org -e "nvim -c 'cd $HOME/org/bm' -c '10Lexplore $HOME/org/bm' $HOME/org/bm/main.md"
 mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
