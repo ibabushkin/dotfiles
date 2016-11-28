@@ -13,7 +13,7 @@ shift
 
 sed -r "s/^# .*$//
 	s/^ *\* (.* :: )*//" $@ | if [[ $fzy == true ]]; then
-	fzy | xargs $program &
+	fzy | (xargs $program &)
 else
 	while read line; do
 		case "$line" in
