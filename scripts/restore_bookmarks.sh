@@ -11,13 +11,17 @@ case "$1" in
 esac
 shift
 
-sed -r "s/^# .*$//
-	s/^ *\* (.* :: )*//" $@ | if [[ $fzy == true ]]; then
-	fzy | (xargs $program &)
+if $fzy; then
+	cat $@ | fzy |
+	sed -r "s/^# .*$//
+		s/^ *\* (.* :: )*//"
 else
-	while read line; do
-		case "$line" in
-			http*) $program $line 2>&1 > /dev/null & ;;
-		esac
-	done
-fi
+	sed -r "s/^# .*$//
+		s/^ *\* (.* :: )*//" $@
+fi |
+while read line; do
+	case "$line" in
+		http*) $program $line 2>&1 > /dev/null & ;;
+	esac
+done
+# fi
