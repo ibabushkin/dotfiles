@@ -14,8 +14,8 @@ alias control='~/dotfiles/scripts/control.sh'
 alias bookmarks='~/dotfiles/scripts/restore_bookmarks.sh'
 
 if command -v colordiff > /dev/null 2>&1; then
-    alias diff="colordiff -Nuar"
+	alias diff="colordiff -Nuar"
 else
-    alias diff="diff -Nuar"
+	alias diff="diff -Nuar"
 fi
 

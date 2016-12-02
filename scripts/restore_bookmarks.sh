@@ -24,4 +24,3 @@ while read line; do
 		http*) $program $line 2>&1 > /dev/null & ;;
 	esac
 done
-# fi

@@ -11,13 +11,13 @@ SAVEHIST="${HISTSIZE}"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 for zshd in $(ls -A ${HOME}/.zsh/*); do
-    source "${zshd}"
+	source "${zshd}"
 done
 
 # make Ctrl-Shift-T work in termite
 if [ "${TERM}" = 'xterm-termite' ]; then
-    source /etc/profile.d/vte.sh
-    __vte_osc7
+	source /etc/profile.d/vte.sh
+	__vte_osc7
 fi
 
 # make a temporary directory if necessary 
@@ -62,7 +62,7 @@ zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
 
 # if running as root and nice >0, renice to 0
 if [ "$USER" = 'root' ] && [ "$(cut -d ' ' -f 19 /proc/$$/stat)" -gt 0 ]; then
-    renice -n 0 -p "$$" && echo "# Adjusted nice level for current shell to 0."
+	renice -n 0 -p "$$" && echo "# Adjusted nice level for current shell to 0."
 fi
 
 # ignore lines prefixed with '#'
@@ -93,7 +93,7 @@ bindkey -M viins "jj" vi-cmd-mode
 # better vi mode
 bindkey -v
 function zle-line-init zle-keymap-select {
-    zle reset-prompt
+	zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -108,51 +108,51 @@ eval $(dircolors ~/.dircolors)
 
 # mode-aware arrow
 function p_arrow {
-  if [[ $KEYMAP = "vicmd" ]]; then
-    echo "%{%F{magenta}%}>%{%f%}"
-  else
-    echo "%{%F{cyan}%}>%{%f%}"
-  fi
+	if [[ $KEYMAP = "vicmd" ]]; then
+		echo "%{%F{magenta}%}>%{%f%}"
+	else
+		echo "%{%F{cyan}%}>%{%f%}"
+	fi
 }
 
 # status info such as time and return code
 function p_status {
-  local res=$?
-  if [ $res -ne 0 ]; then
-    echo "%{%F{red}%}[$res]%{%f%F{cyan}%}-%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
-  else
-    echo "%{%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
-  fi
+	local res=$?
+	if [ $res -ne 0 ]; then
+		echo "%{%F{red}%}[$res]%{%f%F{cyan}%}-%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
+	else
+		echo "%{%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
+	fi
 }
 
 # git info
 function p_vcs {
-  zstyle ':vcs_info:git*' formats "%{%F{cyan}%}-%{%f%}[%s:%{%F{green}%}%b%{%f%}]%{%F{red}%}%u%{%f%F{yellow}%}%c%{%f%}"
-  zstyle ':vcs_info:git*' check-for-changes 1
-  vcs_info
-  echo $vcs_info_msg_0_
+	zstyle ':vcs_info:git*' formats "%{%F{cyan}%}-%{%f%}[%s:%{%F{green}%}%b%{%f%}]%{%F{red}%}%u%{%f%F{yellow}%}%c%{%f%}"
+	zstyle ':vcs_info:git*' check-for-changes 1
+	vcs_info
+	echo $vcs_info_msg_0_
 }
 
 function precmd {
-  s="$(p_status)"
-  FILLBAR=""
-  PWDLEN=""
+	s="$(p_status)"
+	FILLBAR=""
+	PWDLEN=""
 
-  slash="%{%F{cyan}%}%{/%f%}"
-  current_path="${PWD/#$HOME/~}"
+	slash="%{%F{cyan}%}%{/%f%}"
+	current_path="${PWD/#$HOME/~}"
 
-  local str="┌($current_path)$(p_vcs)$s¬"
-  # filter prompt expansion directives for length calculation
-  local zero='%([BSUbfksu]|([FBK]|){*})'
-  local size=${#${(S%%)str//$~zero/}}
+	local str="┌($current_path)$(p_vcs)$s¬"
+	# filter prompt expansion directives for length calculation
+	local zero='%([BSUbfksu]|([FBK]|){*})'
+	local size=${#${(S%%)str//$~zero/}}
 
-  if [[ $size -gt $COLUMNS ]]; then
-    ((PWDLEN=$COLUMNS - $size - 1))
-  else
-    FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
-  fi
+	if [[ $size -gt $COLUMNS ]]; then
+		((PWDLEN=$COLUMNS - $size - 1))
+	else
+		FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
+	fi
 
-  echo ""
+	echo ""
 }
 
 PROMPT='\
