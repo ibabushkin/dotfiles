@@ -11,4 +11,3 @@ mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
 flightgear,fgo
-vdrift,vdrift
