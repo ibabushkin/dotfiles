@@ -48,6 +48,6 @@ command = "~/dotfiles/scripts/battery.sh"
 # we also get a clock with five-second precision
 [timers.clock]
 seconds = 5
-command = "date '+[%a %b %d/%Vw] %R.%S %Z'"
+command = "date '+[%a(%V) %F] %R.%S %Z'"
 
 # vim: set ft=toml:
