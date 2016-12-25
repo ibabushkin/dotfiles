@@ -4,7 +4,7 @@ format = """
 {{{ tagset }}}
 %{F#005577}%{B#1c1c1c} :: %{F#ff0606}
 {{{ mode }}}
-%{F#005577} //%{r}// %{F#657b83}
+%{F#005577} // %{F#657b83}
 {{{ volume }}}
 %{F#005577} :: %{F#657b83}
 {{{ load }}}
@@ -12,6 +12,8 @@ format = """
 {{{ memory }}}
 %{F#005577} :: %{F#657b83}
 {{{ battery }}}
+%{F#005577} //%{r}// %{F#657b83}
+{{{ ddate }}}
 %{F#005577} :: %{F#657b83}
 {{{ clock }}}
 """
@@ -45,9 +47,14 @@ command = "free -m | awk 'NR==2{printf \"mem: [%s \", $3 } NR==3{printf \"%s MiB
 minutes = 1
 command = "~/dotfiles/scripts/battery.sh"
 
+# ddate and stuff
+[timers.ddate]
+hours = 24
+command = "ddate '+[%{%A, %e of %B%}, YOLD %Y]%N: %H'"
+
 # we also get a clock with five-second precision
 [timers.clock]
 seconds = 5
-command = "date '+[%a(%V) %F] %R.%S %Z'"
+command = "date '+[%a(%V), %F] %R.%S %Z'"
 
 # vim: set ft=toml:
