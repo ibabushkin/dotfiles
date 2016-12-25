@@ -52,6 +52,7 @@ if has("autocmd")
   Bundle "cespare/vim-toml"
   Bundle "neomake/neomake"
   Bundle "vim-scripts/octave.vim--"
+  Bundle "vimwiki/vimwiki"
 
   filetype plugin indent on
 
@@ -173,8 +174,15 @@ let g:haskell_indent_guard = 4
 " run neomake on save
 autocmd! BufWritePost * Neomake
 
-" enabled makers
+" enabled makers for haskell
 let g:neomake_haskell_enabled_makers = ['hlint', 'hdevtools']
+
+let g:neomake_cpp_enabled_makers = []
+
+" parameters for clang
+let g:neomake_cpp_clang_maker = {
+    \ 'args': ['-std=c++14', '-Wall', '-Wextra', '-Weverything', '-pedantic']
+    \ }
 
 " make neomake's error symbols nicer
 let g:neomake_error_sign = {'text': 'E', 'texthl': 'NeomakeErrorSign'}
@@ -205,6 +213,9 @@ nnoremap <C-Z> :InsertTimestampExact
 " set up our file explorer
 let g:netrw_banner = 0
 let g:netrw_winsize = 30
+
+" set up vimwiki
+" let g:vimwiki_list = [{'path': '~/org/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " use our colorscheme
 colorscheme wombat
