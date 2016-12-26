@@ -7,6 +7,7 @@ weechat,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh --remote"
 htop,termite --class Mon -e htop
 org,termite --class Org -e "nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md"
 bookmarks,termite --class Org -e "nvim -c 'cd $HOME/org/bm' -c '10Lexplore $HOME/org/bm' $HOME/org/bm/main.md"
+cmus,termite --class Media -e "cmus"
 mpv,mpv
 minecraft,java -jar $HOME/Minecraft.jar
 sauerbraten,sauerbraten-client
