@@ -59,7 +59,7 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  set textwidth=90
+  set textwidth=89
   autocmd FileType text setlocal textwidth=78
 
   autocmd BufReadPost *
