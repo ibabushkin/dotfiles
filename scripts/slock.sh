@@ -1,4 +1,6 @@
 #!/bin/sh
-cmus-remote -u
+cmus-remote -Q | grep "status playing"
+cmus_status=$?
+[[ $cmus_status -eq 0 ]] && cmus-remote -u
 ~/dotfiles/scripts/pom.sh -p && slock && ~/dotfiles/scripts/pom.sh -p
-cmus-remote -u
+[[ $cmus_status -eq 0 ]] && cmus-remote -u
