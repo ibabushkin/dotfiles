@@ -1,3 +1,6 @@
 [submodule "config/gabelstaplerwm"]
 	path = config/gabelstaplerwm
 	url = git@github.com:ibabushkin/gabelstaplerwm.git
+[submodule "z"]
+	path = z
+	url = https://github.com/rupa/z

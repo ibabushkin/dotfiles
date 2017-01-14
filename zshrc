@@ -9,6 +9,7 @@ HISTFILE="${ZDOTDIR}/.zsh_history"
 HISTSIZE='10000'
 SAVEHIST="${HISTSIZE}"
 
+source $HOME/dotfiles/z/z.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 for zshd in $(ls -A ${HOME}/.zsh/*); do
     source "${zshd}"
