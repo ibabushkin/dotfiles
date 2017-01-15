@@ -12,17 +12,24 @@ cursor_blink = off
 browser = firefox
 
 [colors]
-background = #1c1c1c
+background = #141414
+# background = #1c1c1c
 foreground = #657b83
 cursor = #2aa198
+# color0 = #233333
 color0 = #073642
 color1 = #dc322f
-color2 = #859900
+# color2 = #546b55
+color2 = #0d8c1e #859900 #197826
+# color3 = #9a8441
 color3 = #b58900
 color4 = #268bd2
+# color5 = #6b856a
 color5 = #d33682
+# color6 = #0774e3
 color6 = #2aa198
 color7 = #eee8d5
+# color8 = #121e1f
 color8 = #002b36
 color9 = #cb4b16
 color10 = #586e75
