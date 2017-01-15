@@ -20,23 +20,24 @@ endif
 
 let colors_name = "wombat"
 
+" some none-s were 234
 " General colors
-hi Normal ctermfg=252 ctermbg=234 cterm=none
-hi Cursor ctermfg=234 ctermbg=228 cterm=none
+hi Normal ctermfg=252 ctermbg=none cterm=none
+hi Cursor ctermfg=none ctermbg=228 cterm=none
 hi Visual ctermfg=251 ctermbg=239 cterm=none
 hi VisualNOS ctermfg=251 ctermbg=236 cterm=none
 hi Search ctermfg=177 ctermbg=241 cterm=none
 hi Folded ctermfg=103 ctermbg=237 cterm=none
 hi Title ctermfg=230 cterm=bold
-hi StatusLine ctermfg=230 ctermbg=238 cterm=none
+hi StatusLine ctermfg=230 ctermbg=236 cterm=none
 hi VertSplit ctermfg=238 ctermbg=238 cterm=none
 hi StatusLineNC ctermfg=241 ctermbg=238 cterm=none
 hi LineNr ctermfg=241 ctermbg=234 cterm=none
-hi SpecialKey ctermfg=241 ctermbg=234 cterm=none
+hi SpecialKey ctermfg=241 ctermbg=none cterm=none
 hi WarningMsg ctermfg=203
-hi ErrorMsg ctermfg=196 ctermbg=234 cterm=bold
-hi SpellBad ctermfg=196 ctermbg=234 cterm=bold
-hi SpellCap ctermfg=196 ctermbg=234 cterm=bold
+hi ErrorMsg ctermfg=196 ctermbg=none cterm=bold
+hi SpellBad ctermfg=196 ctermbg=none cterm=bold
+hi SpellCap ctermfg=196 ctermbg=none cterm=bold
 
 " Vim >= 7.0 specific colors
 if version >= 700
@@ -49,7 +50,7 @@ endif
 
 " Diff highlighting
 hi DiffAdd ctermbg=17
-hi DiffDelete ctermfg=234 ctermbg=60 cterm=none
+hi DiffDelete ctermfg=none ctermbg=60 cterm=none
 hi DiffText ctermbg=53 cterm=none
 hi DiffChange ctermbg=237
 
@@ -70,7 +71,7 @@ hi Todo ctermbg=108 cterm=none
 " Links
 hi! link FoldColumn Folded
 hi! link CursorColumn CursorLine
-hi! link NonText LineNr
+" hi! link NonText LineNr
 
 set cursorcolumn
 set cursorline

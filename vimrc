@@ -201,10 +201,10 @@ augroup my_warning_signs
 augroup END
 augroup my_message_signs
   au!
-  autocmd ColorScheme * hi NeomakeMessageSign ctermbg=234
+  autocmd ColorScheme * hi NeomakeMessageSign ctermbg=none
 augroup my_info_signs
   au!
-  autocmd ColorScheme * hi NeomakeInfoSign ctermbg=234
+  autocmd ColorScheme * hi NeomakeInfoSign ctermbg=none
 
 " map timestamp functions to keys
 nnoremap <C-T> :InsertTimestamp
