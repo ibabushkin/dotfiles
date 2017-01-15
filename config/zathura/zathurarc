@@ -1,0 +1,6 @@
+set completion-bg "#1c1c1c"
+set completion-fg "#657b83"
+set default-bg "#141414"
+set default-fg "#657b83"
+set font "termsyn 14"
+set first-page-column "1:1"
