@@ -132,6 +132,16 @@ inoremap <Right> <NOP>
 " insert tab character when needed
 inoremap <S-Tab> <C-V><Tab>
 
+" insert an enter in a more convenient fashion
+inoremap <C-O> <CR>
+noremap <C-O> <CR>
+vnoremap <C-O> <CR>
+xnoremap <C-O> <CR>
+snoremap <C-O> <CR>
+onoremap <C-O> <CR>
+lnoremap <C-O> <CR>
+cnoremap <C-O> <CR>
+
 " give us a nice margin to the window border
 set scrolloff=16
 
