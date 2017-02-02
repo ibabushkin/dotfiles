@@ -21,7 +21,7 @@ set index-fg "#657b83"
 set index-active-bg "#005577"
 set index-active-fg "#f8f8f8"
 
-set font "termsyn 14"
+set font "termsyn 10"
 
 set first-page-column "1:1"
 set statusbar-home-tilde true

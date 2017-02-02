@@ -1,5 +1,5 @@
 [options]
-font = Termsyn 12
+font = Termsyn 11
 audible_bell = false
 visible_bell = false
 mouse_autohide = true
