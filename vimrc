@@ -34,8 +34,8 @@ if has("autocmd")
   filetype off
 
   " init vundle
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  call vundle#begin()
 
   " our plugins
   Bundle "gmarik/vundle"
@@ -68,6 +68,7 @@ if has("autocmd")
     \ endif
 
   augroup END
+  call vundle#end()
 else
   set autoindent
 endif
