@@ -89,6 +89,7 @@ bindkey "^[[B" history-beginning-search-forward
 bindkey "^K" history-beginning-search-backward 
 bindkey "^[[A" history-beginning-search-backward 
 bindkey "^O" accept-line
+bindkey -M vicmd "^O" accept-line
 bindkey -M viins "jj" vi-cmd-mode
 
 # better vi mode
