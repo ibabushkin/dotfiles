@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 cmus-remote -Q | grep "status playing"
 cmus_status=$?
 [[ $cmus_status -eq 0 ]] && cmus-remote -u

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [[ $1 != "--remote" ]]; then
     if $(tmux has-session -t weechat); then
         exec tmux attach

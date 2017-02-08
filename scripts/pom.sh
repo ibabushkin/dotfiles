@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 pid=$(pidof spt)
 
 if [[ $pid == "" ]]; then

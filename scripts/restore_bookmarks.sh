@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 fzy=false
 if [[ "$1" == "fzy" ]]; then
     fzy=true
