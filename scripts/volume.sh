@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 if [ $1 = "init" ]; then
-    out=$(amixer -c 1 get Master | grep "\[")
+    out=$(amixer get Master | grep "\[")
 else
-    out=$(amixer -c 1 set Master $1 | grep "\[")
+    out=$(amixer set Master $1 | grep "\[")
 fi
 
 if [[ "$out" =~ "[on]" ]]; then
