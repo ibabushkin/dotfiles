@@ -53,11 +53,6 @@ command = "free -m | awk 'NR==2{printf \"mem: %{F#268bd2}[%s \", $3 } NR==3{prin
 minutes = 1
 command = "~/dotfiles/scripts/battery.sh"
 
-# ddate and stuff
-[timers.ddate]
-hours = 24
-command = "ddate '+[%{%A, %e of %B%}, YOLD %Y]%N: %H'"
-
 # we also get a clock with five-second precision
 [timers.clock]
 seconds = 5
