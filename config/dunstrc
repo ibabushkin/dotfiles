@@ -1,5 +1,5 @@
 [global]
-    font = Termsyn 12
+    font = Misc Termsyn 12
     allow_markup = yes
     format = "<b>%a: %s</b>\n%p %b"
     sort = yes
