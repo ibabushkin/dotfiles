@@ -23,5 +23,5 @@ which xset 2> /dev/null && xset -b
 ~/dotfiles/scripts/control.sh start bar
 ~/dotfiles/scripts/control.sh start dunst
 bgs -z ~/dotfiles/background.jpg &
-swarp 0 768 &
+swarp 0 900 &
 RUST_BACKTRACE=1 RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
