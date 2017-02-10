@@ -15,6 +15,7 @@ if [[ "$1" = "start" || "$1" = "restart" ]]; then
     bar)
         bartender | lemonbar -p -g 1440x20+0+0 > /dev/null &
         ~/dotfiles/scripts/volume.sh init &
+        ~/dotfiles/scripts/network.sh > ~/tmp/net_fifo &
         ;;
     dunst)
         dunst &

@@ -11,6 +11,8 @@ format = """
 {{{ cmus }}}
 {{/ cmus }}
 %{F#005577} //%{r}// %{F#657b83}
+{{{ net }}}
+%{F#005577} :: %{F#657b83}
 {{{ load }}}
 %{F#005577} :: %{F#657b83}
 {{{ memory }}}
@@ -37,6 +39,11 @@ fifo_path = "~/tmp/alsa_fifo"
 # and cmus uses a FIFO, too
 [fifos.cmus]
 fifo_path = "~/tmp/cmus_fifo"
+
+# network is handled by network manager hooks
+[fifos.net]
+fifo_path = "~/tmp/net_fifo"
+default = "no net"
 
 # load is updated each second via a simple script
 [timers.load]
