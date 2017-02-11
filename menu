@@ -1,5 +1,4 @@
 firefox,firefox
-uzbl,uzbl-browser
 mumble,mumble
 telegram,termite --class Chat -e "telegram-cli -N -A -W"
 weechat,termite --class Chat -e "$HOME/dotfiles/scripts/weechat.sh --remote"
@@ -8,6 +7,3 @@ org,termite --class Org -e "nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HO
 bookmarks,termite --class Org -e "nvim -c 'cd $HOME/org/bm' -c '10Lexplore $HOME/org/bm' $HOME/org/bm/main.md"
 cmus,termite --class Media -e "cmus"
 mpv,mpv
-minecraft,java -jar $HOME/Minecraft.jar
-sauerbraten,sauerbraten-client
-flightgear,fgo
