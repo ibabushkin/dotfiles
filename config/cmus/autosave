@@ -87,7 +87,7 @@ set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=0 0
-set status_display_program=/home/twk/dotfiles/scripts/cmus.sh
+set status_display_program=
 set wrap_search=true
 bind browser backspace browser-up
 bind browser i toggle show_hidden
