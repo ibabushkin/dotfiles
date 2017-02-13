@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $1 = "init" ]; then
+if [ "$1" = "init" ]; then
     out=$(amixer get Master | grep "\[")
 else
     out=$(amixer set Master $1 | grep "\[")

@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 remove=false
 
-if [[ $1 == "--help" ]]; then
+if [ "$1" = "--help" ]; then
     exit 0
-elif [[ $1 == "-s" ]]; then
+elif [ "$1" = "-s" ]; then
     dir="img"
     files="$2"
     shift; shift

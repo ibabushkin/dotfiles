@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 fzy=false
-if [[ "$1" == "fzy" ]]; then
+if [ "$1" = "fzy" ]; then
     fzy=true
     shift
 fi
@@ -12,12 +12,11 @@ esac
 shift
 
 if $fzy; then
-    cat $@ | fzy |
-    sed -r "s/^# .*$//
-        s/^ *\* (.* :: )*//"
+    cat $@ | fzy | sed -r "s/^# .*$//
+    s/^ *\* (.* :: )*//"
 else
     sed -r "s/^# .*$//
-        s/^ *\* (.* :: )*//" $@
+    s/^ *\* (.* :: )*//" $@
 fi |
 while read line; do
     case "$line" in

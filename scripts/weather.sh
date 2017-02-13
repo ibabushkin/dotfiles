@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # read in a place name
 cat ~/dotfiles/weather_cache | sort | dmenu -y 20 -p location: | tr , "\n" |
 xargs -I{} ~/.local/bin/hweather -a $(cat ~/hweather/openweathermap.id) -f Pango -u Metric -c {} -C {} |

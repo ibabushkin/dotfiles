@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # output info to the appropriate place
-function output() {
+output() {
     echo "$_status$*" > ~/tmp/cmus_fifo
 }
 
 # read in the variables (given as ./cmus.sh var1_name var1_value var2_name var2_value ...)
-while [[ $# -ge 2 ]]; do
+while [ $# -ge 2 ]; do
 	eval _$1='$2'
 	shift
 	shift
@@ -30,11 +30,11 @@ case "$_status" in
 esac
 
 # build output string
-if [[ -n "$_file" || -n "$_url" ]]; then
+if [ -n "$_file" || -n "$_url" ]; then
     str=":"
-    [[ -n "$_artist" ]] && str="$str $_artist"
-    [[ -n "$_artist" && -n "$_title" ]] && str="$str -"
-    [[ -n "$_title" ]] && str="$str $_title"
+    [ -n "$_artist" ] && str="$str $_artist"
+    [ -n "$_artist" && -n "$_title" ] && str="$str -"
+    [ -n "$_title" ] && str="$str $_title"
 	output $str
 else
 	output
