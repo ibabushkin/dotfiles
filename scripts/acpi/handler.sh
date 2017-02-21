@@ -34,6 +34,7 @@ case "$1" in
         case "$2" in
             SBTN|SLPB)
                 logger "Sleep Button pressed: $2, suspending..."
+                doas -u twk gpgconf --kill gpg-agent
                 DISPLAY=:0 doas -u twk slock
                 sleep .2
                 zzz
@@ -81,6 +82,7 @@ case "$1" in
         case "$3" in
             close)
                 logger "LID closed, suspending..."
+                doas -u twk gpgconf --kill gpg-agent
                 DISPLAY=:0 doas -u twk slock &
                 sleep .2
                 zzz
