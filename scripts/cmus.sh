@@ -15,7 +15,8 @@ done
 # render status (early exit if no playback is running)
 case "$_status" in
     "stopped")
-        output ""
+        _status=""
+        output
         exit 0
         ;;
     "playing")
