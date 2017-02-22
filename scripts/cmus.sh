@@ -30,10 +30,10 @@ case "$_status" in
 esac
 
 # build output string
-if [ -n "$_file" || -n "$_url" ]; then
+if [ -n "$_file" ] || [ -n "$_url" ]; then
     str=":"
     [ -n "$_artist" ] && str="$str $_artist"
-    [ -n "$_artist" && -n "$_title" ] && str="$str -"
+    [ -n "$_artist" ] && [ -n "$_title" ] && str="$str -"
     [ -n "$_title" ] && str="$str $_title"
 	output $str
 else
