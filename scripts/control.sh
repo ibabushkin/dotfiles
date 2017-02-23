@@ -18,7 +18,7 @@ if [ "$1" = "start" -o "$1" = "restart" ]; then
         ~/dotfiles/scripts/network.zsh > ~/tmp/net_fifo &
         ;;
     dunst)
-        dunst &
+        dunst -shrink &
         ;;
     esac
 fi
