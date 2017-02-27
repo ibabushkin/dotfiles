@@ -158,5 +158,5 @@ function precmd {
 }
 
 PROMPT='\
-%{%F{cyan}%}┌%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{cyan}%}¬
-└-%{%f%}$(p_arrow) '
+%{%F{cyan}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{cyan}%}¬
+\`-%{%f%}$(p_arrow) '
