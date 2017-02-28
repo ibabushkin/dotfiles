@@ -237,4 +237,6 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 " and hide the usual indicator
-set noshowmode
+" set noshowmode
+" autocmd InsertEnter * highlight Cursor ctermfg=cyan ctermbg=black
+" autocmd InsertLeave * highlight Cursor ctermfg=black ctermbg=cyan
