@@ -1,8 +1,7 @@
 firefox,firefox
-mumble,mumble
-weechat,st -c Chat -e $HOME/dotfiles/scripts/weechat.sh --remote
-htop,st -c Mon -e htop
-org,st -c Org -e nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md
 bookmarks,st -c Org -e nvim -c 'cd $HOME/org/bm' -c '10Lexplore $HOME/org/bm' $HOME/org/bm/main.md
+org,st -c Org -e nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md
+weechat,st -c Chat -e tmux new $HOME/dotfiles/scripts/weechat.sh --remote
+mutt,st -c Mail -e tmux new mutt
 cmus,st -c Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
-mpv,mpv
+htop,st -c Mon -e tmux new htop
