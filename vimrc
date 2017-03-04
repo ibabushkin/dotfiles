@@ -29,49 +29,46 @@ syntax on
 set incsearch
 set hlsearch
 
-if has("autocmd")
-  " vundle will shit it's pants if we don't
-  filetype off
+" vundle will shit it's pants if we don't
+filetype off
 
-  " init vundle
-  set rtp+=~/.vim/bundle/Vundle.vim/
-  call vundle#begin()
+" init vundle
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-  " our plugins
-  Bundle "gmarik/vundle"
-  Bundle "godlygeek/tabular"
-  Bundle "dhruvasagar/vim-table-mode"
-  Bundle "MarcWeber/vim-addon-mw-utils"
-  Bundle "tomtom/tlib_vim"
-  Bundle "garbas/vim-snipmate"
-  Bundle "honza/vim-snippets"
-  Bundle "ibabushkin/vim-markdown"
-  Bundle "unblevable/quick-scope"
-  Bundle "rust-lang/rust.vim"
-  Bundle "neovimhaskell/haskell-vim"
-  Bundle "cespare/vim-toml"
-  Bundle "neomake/neomake"
-  Bundle "vim-scripts/octave.vim--"
-  Bundle "vimwiki/vimwiki"
+" our plugins
+Bundle "gmarik/vundle"
+Bundle "godlygeek/tabular"
+Bundle "dhruvasagar/vim-table-mode"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+Bundle "ibabushkin/vim-markdown"
+Bundle "unblevable/quick-scope"
+Bundle "rust-lang/rust.vim"
+Bundle "neovimhaskell/haskell-vim"
+Bundle "cespare/vim-toml"
+Bundle "neomake/neomake"
+Bundle "vim-scripts/octave.vim--"
+Bundle "vimwiki/vimwiki"
 
-  filetype plugin indent on
+call vundle#end()
 
-  augroup vimrcEx
-  au!
+filetype plugin indent on
 
-  set textwidth=89
-  autocmd FileType text setlocal textwidth=78
+augroup vimrcEx
+au!
 
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+set textwidth=89
+autocmd FileType text setlocal textwidth=78
 
-  augroup END
-  call vundle#end()
-else
-  set autoindent
-endif
+autocmd BufReadPost *
+\ if line("'\"") > 1 && line("'\"") <= line("$") |
+\   exe "normal! g`\"" |
+\ endif
+
+augroup END
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
