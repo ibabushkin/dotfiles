@@ -12,7 +12,7 @@ case $(cat /sys/class/power_supply/BAT0/status) in
         status="-"
         ;;
     Full)
-        status="●"
+        status=""
         ;;
     *)
         status="e"
