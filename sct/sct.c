@@ -34,6 +34,9 @@ static const struct { float r; float g; float b; } whitepoints[] = {
 	{ 0.77442176,  0.85453121,  1.00000000, },
 };
 
+#define AVG(c) \
+	whitepoints[temp / 500].c * (1 - ratio) + whitepoints[temp / 500 + 1].c * ratio
+
 int
 main(int argc, char **argv)
 {
@@ -51,15 +54,12 @@ main(int argc, char **argv)
 
 	temp -= 1000;
 	double ratio = temp % 500 / 500.0;
-#define AVG(c) whitepoints[temp / 500].c * (1 - ratio) + whitepoints[temp / 500 + 1].c * ratio
 	double gammar = AVG(r);
 	double gammag = AVG(g);
 	double gammab = AVG(b);
 
-	int num_crtcs = res->ncrtc;
 	for (int c = 0; c < res->ncrtc; c++) {
 		int crtcxid = res->crtcs[c];
-		XRRCrtcInfo *crtc_info = XRRGetCrtcInfo(dpy, res, crtcxid);
 
 		int size = XRRGetCrtcGammaSize(dpy, crtcxid);
 
