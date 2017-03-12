@@ -8,6 +8,7 @@ alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias dump='~/dotfiles/scripts/dump.sh'
 alias control='~/dotfiles/scripts/control.sh'
 alias bookmarks='~/dotfiles/scripts/restore_bookmarks.sh'
+alias reattach='~/dotfiles/scripts/reattach.sh'
 alias cmus='cmus && echo "" > ~/tmp/cmus_fifo'
 
 if command -v colordiff > /dev/null 2>&1; then
