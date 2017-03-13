@@ -1,6 +1,9 @@
 #!/bin/sh
 line=$(sed 's/,.*//' ~/dotfiles/workspace_cache | sort |
 dmenu -n -i -y 20 | xargs -I{} grep {}, ~/dotfiles/workspace_cache)
+
+[ -z $line ] && exit 0
+
 workspace=$(echo $line | sed 's/,.*//')
 path=$(echo $line | sed 's/.*,//')
 
