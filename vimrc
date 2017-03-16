@@ -183,6 +183,8 @@ autocmd! BufWritePost * Neomake
 " enabled makers for haskell
 let g:neomake_haskell_enabled_makers = ['hlint', 'hdevtools']
 
+let g:neomake_rust_enabled_makers = []
+
 let g:neomake_cpp_enabled_makers = []
 
 " parameters for clang
