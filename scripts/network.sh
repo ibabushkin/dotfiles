@@ -5,7 +5,7 @@ if [ "$out" != "" ]; then
 else
     out=$(nmcli -m tabular -t -f "GENERAL.CONNECTION,IP4.ADDRESS" dev show wlp2s0 |
     sed -z "s/\\n/: %{F#268bd2}[/")
-    if echo "$out" | grep "--"; then
+    if echo "$out" | grep -e "--" > /dev/null; then
         echo "no net"
     else
         echo "$out]"
