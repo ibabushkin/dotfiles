@@ -1,6 +1,7 @@
 [user]
 	name = Inokentiy Babushkin
 	email = twk@twki.de
+	signingkey = 7EFC8EC5224DE8EC
 [core]
 	editor = nvim
 [credential]
