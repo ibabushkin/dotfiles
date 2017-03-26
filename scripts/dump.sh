@@ -9,21 +9,21 @@ elif [ "$1" = "-s" ]; then
     shift; shift
     remove=true
 
-    scrot $@ $files
+    scrot "$@" "$files"
 else
     dir=$1
     shift
-    files=$@
+    files=$*
 fi
 
-if $(scp -r $files "toaster:/var/www/htdocs/$dir"); then
+if scp -r "$files" "toaster:/var/www/htdocs/$dir"; then
     echo ""
 
     for file in $files; do
-        echo "https://twki.de/$dir/$(basename $file)"
+        echo "https://twki.de/$dir/$(basename "$file")"
     done
 
     if $remove; then
-        rm -r $files
+        rm -r "$files"
     fi
 fi

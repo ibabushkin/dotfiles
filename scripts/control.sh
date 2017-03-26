@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "$1" = "stop" -o "$1" = "restart" ]; then
+if [ "$1" = "stop" ] || [ "$1" = "restart" ]; then
     case $2 in
         bar)
             killall bartender && killall lemonbar
@@ -10,7 +10,7 @@ if [ "$1" = "stop" -o "$1" = "restart" ]; then
     esac
 fi
 
-if [ "$1" = "start" -o "$1" = "restart" ]; then
+if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
     case $2 in
     bar)
         bartender 2> ~/bartender_log | lemonbar -p -g 1440x20+0+0 > /dev/null &

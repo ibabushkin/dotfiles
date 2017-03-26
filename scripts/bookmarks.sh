@@ -12,14 +12,14 @@ esac
 shift
 
 if $fzy; then
-    cat $@ | fzy | sed -r "s/^# .*$//
+    cat "$@" | fzy | sed -r "s/^# .*$//
     s/^ *\* (.* :: )*//"
 else
     sed -r "s/^# .*$//
-    s/^ *\* (.* :: )*//" $@
+    s/^ *\* (.* :: )*//" "$@"
 fi |
-while read line; do
+while read -r line; do
     case "$line" in
-        http*) $program $line 2>&1 > /dev/null & ;;
+        http*) $program "$line" > /dev/null 2>&1 & ;;
     esac
 done

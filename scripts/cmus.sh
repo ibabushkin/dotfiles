@@ -36,7 +36,7 @@ if [ -n "$_file" ] || [ -n "$_url" ]; then
     [ -n "$_artist" ] && str="$str $_artist"
     [ -n "$_artist" ] && [ -n "$_title" ] && str="$str -"
     [ -n "$_title" ] && str="$str $_title"
-	output $str
+	output "$str"
 else
 	output
 fi
