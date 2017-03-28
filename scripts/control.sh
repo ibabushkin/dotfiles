@@ -15,6 +15,9 @@ if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
     bar)
         bartender 2> ~/bartender_log | lemonbar -p -g 1440x20+0+0 > /dev/null &
         ~/dotfiles/scripts/volume.sh init &
+        if pgrep gpg-agent > /dev/null; then
+            echo "+" > ~/tmp/gpg_status_fifo
+        fi
         ~/dotfiles/scripts/network.sh > ~/tmp/net_fifo &
         ;;
     dunst)

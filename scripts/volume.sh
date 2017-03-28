@@ -5,7 +5,7 @@ else
     out=$(amixer set Master "$1" | tail -n 1)
 fi
 
-if echo "$out" | grep "\[on\]"; then
+if echo "$out" | grep "\[on\]" > /dev/null; then
     echo "vol: %{F#268bd2}$(echo "$out" | cut -d ' ' -f 6)" > ~/tmp/alsa_fifo
 else
     echo "vol: %{F#ff0606}$(echo "$out" | cut -d ' ' -f 6)" > ~/tmp/alsa_fifo

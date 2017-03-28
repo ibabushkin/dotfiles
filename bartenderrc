@@ -10,7 +10,7 @@ format = """
 %{F#005577} :: %{F#657b83}
 {{{ cmus }}}
 {{/ cmus }}
-%{F#005577} //%{r}// %{F#657b83}
+%{F#005577} // %{F#ff0606}{{{ gpg_status }}}%{r}%{F#005577}// %{F#657b83}
 {{{ net }}}
 %{F#005577} :: %{F#657b83}
 {{{ load }}}
@@ -44,6 +44,9 @@ fifo_path = "~/tmp/cmus_fifo"
 [fifos.net]
 fifo_path = "~/tmp/net_fifo"
 default = "no net"
+
+[fifos.gpg_status]
+fifo_path = "~/tmp/gpg_status_fifo"
 
 # load is updated each second via a simple script
 [timers.load]

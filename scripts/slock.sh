@@ -1,5 +1,6 @@
 #!/bin/sh
 gpgconf --kill gpg-agent
+echo "" > ~/tmp/gpg_status_fifo
 cmus-remote -Q | grep "status playing" 2> /dev/null
 cmus_status=$?
 [ $cmus_status -eq 0 ] && cmus-remote -u
