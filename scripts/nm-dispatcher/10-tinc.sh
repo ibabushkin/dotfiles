@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ "$2" = "up" ] && ! pgrep tincd; then
-    tincd -n personal
-elif [ "$2" = "down" ] && pgrep tincd; then
+if ( [ "$2" = "up" ] || [ "$2" = "down" ] ) && [ "$1" != "personal" ]; then
     tincd -n personal -k
+    sleep .2
+    tincd -n personal
 fi
