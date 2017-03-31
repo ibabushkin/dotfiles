@@ -28,8 +28,3 @@ set statusbar-home-tilde true
 
 set highlight-color "#005577"
 set highlight-active-color "#ff0606"
-
-map <S-j> scroll down
-map <S-k> scroll up
-map j navigate next
-map k navigate previous
