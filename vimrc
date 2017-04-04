@@ -54,6 +54,9 @@ Bundle "vimwiki/vimwiki"
 call vundle#end()
 
 filetype plugin indent on
+augroup filetypedetect
+  au BufRead,BufNewFile *.thy setfiletype isabelle
+augroup END
 
 augroup vimrcEx
 au!
