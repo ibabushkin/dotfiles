@@ -8,3 +8,5 @@
 	helper = cache --timeout=3600
 [push]
 	default = simple
+[gpg]
+	program = gpg2
