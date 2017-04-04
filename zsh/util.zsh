@@ -1,3 +1,4 @@
+#!/bin/zsh
 reload () {
     exec "${SHELL}" "$@"
 }

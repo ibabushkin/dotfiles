@@ -1,3 +1,4 @@
+#!/bin/zsh
 # highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=magenta'

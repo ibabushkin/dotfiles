@@ -1,5 +1,5 @@
 # .zshrc
-# Mostly by Inokentiy Babushkin <inokentiy.babushkin@gmail.com>
+# Mostly by Inokentiy Babushkin <twk@twki.de>
 # License: beerware.
 
 # Basic zsh config.
@@ -14,12 +14,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 for zshd in $(ls -A ${HOME}/.zsh/*); do
     source "${zshd}"
 done
-
-# make Ctrl-Shift-T work in termite
-if [ "${TERM}" = 'xterm-termite' ]; then
-    source /etc/profile.d/vte.sh
-    __vte_osc7
-fi
 
 # make a temporary directory if necessary 
 if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
@@ -54,6 +48,7 @@ bindkey '^x^e' edit-command-line
 # completion
 autoload -Uz compinit
 compinit
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' menu select=2
@@ -94,9 +89,11 @@ bindkey -M viins "jj" vi-cmd-mode
 
 # better vi mode
 bindkey -v
+
 function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
+
 zle -N zle-line-init
 zle -N zle-keymap-select
 
