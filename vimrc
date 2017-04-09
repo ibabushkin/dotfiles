@@ -110,9 +110,6 @@ let g:snips_github = "http://www.github.com/ibabushkin"
 " spelling languages
 set spelllang=en,de
 
-" use jj to get back to insert mode
-inoremap jj <ESC>
-
 " get rid of arrow keys and backspace
 inoremap <BS> <NOP>
 noremap <Up> <NOP>
