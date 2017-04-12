@@ -1,3 +1,2 @@
 #!/bin/sh
-~/.local/bin/morgue -d -f Pango -s slow ~/org/notes.md ~/org/uni.md > ~/tmp/agenda
-notify-send -u low -t 0 -a morgue "$(cat ~/tmp/agenda)"
+notify-send -t 0 -u low -a morgue "$(morgue -d -f pango -t slow -i -m timed ~/org/notes.md ~/org/uni.md)"
