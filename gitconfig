@@ -3,7 +3,7 @@
 	email = twk@twki.de
 	signingkey = 7EFC8EC5224DE8EC
 [alias]
-	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %n%an %C(bold blue)<%ae>%Creset' --abbrev-commit
+	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %n%an %C(bold blue)<%ae> %Cred%G?%Creset' --abbrev-commit
 [commit]
 	gpgsign = true
 [core]
