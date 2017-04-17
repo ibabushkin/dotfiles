@@ -2,23 +2,23 @@
 format = """
 %{F#cccccc}%{B#005577}
 {{{ tagset }}}
-%{F#005577}%{B#1c1c1c} :: %{F#ff0606}
+%{F#005577}%{B#1c1c1c} > %{F#ff0606}
 {{{ mode }}}
-%{F#005577} || %{F#657b83}
+%{F#005577} > %{F#657b83}
 {{{ volume }}}
 {{# cmus }}
-%{F#005577} :: %{F#657b83}
+%{F#005577} > %{F#657b83}
 {{{ cmus }}}
 {{/ cmus }}
-%{F#005577} // %{F#ff0606}{{{ gpg_status }}}%{r}%{F#005577}// %{F#657b83}
+%{F#005577} >> %{F#ff0606}{{{ gpg_status }}}%{r}%{F#005577}<< %{F#657b83}
 {{{ net }}}
-%{F#005577} :: %{F#657b83}
+%{F#005577} < %{F#657b83}
 {{{ load }}}
-%{F#005577} :: %{F#657b83}
+%{F#005577} < %{F#657b83}
 {{{ memory }}}
-%{F#005577} :: %{F#657b83}
+%{F#005577} < %{F#657b83}
 {{{ battery }}}
-%{F#005577} :: %{F#657b83}
+%{F#005577} < %{F#657b83}
 {{{ clock }}}
 """
 
@@ -66,6 +66,6 @@ command = "~/dotfiles/scripts/battery.sh"
 # we also get a clock with five-second precision
 [timers.clock]
 seconds = 5
-command = "date '+[%a(%V), %F, %{F#268bd2}%R:%S %Z%%{F#657b83}]'"
+command = "date '+%a(%V), %F, %{F#268bd2}%R:%S %Z%%{F#657b83}'"
 
 # vim: set ft=toml:
