@@ -1,5 +1,7 @@
 /* public domain, do as you wish
  * taken from http://www.tedunangst.com/flak/post/sct-set-color-temperature
+ * compile like this:
+ * cc -std=c99 -O2 -I /usr/X11R6/include -o sct sct.c -L /usr/X11R6/lib -lm -lX11 -lXrandr
  */
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
