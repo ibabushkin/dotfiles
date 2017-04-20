@@ -1,6 +1,6 @@
 firefox,firefox
-bookmarks,st -c Org -e nvim -c 'cd $HOME/org/bookmarks' -c '10Lexplore $HOME/org/bookmarks' $HOME/org/bookmarks/main.md
-org,st -c Org -e nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md
+bookmarks,st -c Org -e tmux new -s bookmarks nvim -c 'cd $HOME/org/bookmarks' -c '10Lexplore $HOME/org/bookmarks' $HOME/org/bookmarks/main.md
+org,st -c Org -e tmux new -s org nvim -c 'cd $HOME/org' -c '10Lexplore $HOME/org' $HOME/org/notes.md
 weechat,st -c Chat -e tmux new -s weechat mosh toaster -- tmux new -A -s weechat weechat
 mutt,st -c Mail -e tmux new -s mutt mutt
 cmus,st -c Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
