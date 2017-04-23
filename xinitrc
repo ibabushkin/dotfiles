@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# variables
-userresources=~/.Xresources
-usermodmap=~/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
-
 # clipboard management
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
@@ -13,11 +7,9 @@ autocutsel -selection PRIMARY -fork &
 # don't beep
 which xset 2> /dev/null && xset -b
 
-# merge in defaults and keymaps
-[ -f $sysresources ] && xrdb -merge $sysresources
-[ -f $sysmodmap ] && xmodmap $sysmodmap
-[ -f $userresources ] && xrdb -merge $userresources
-[ -f $usermodmap ] && xmodmap $usermodmap
+# merge in resources and keymaps
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+# [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 
 # start the window manager and some other stuff
 ~/dotfiles/scripts/control.sh start bar
