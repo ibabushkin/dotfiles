@@ -225,9 +225,6 @@ let g:netrw_winsize = 30
 " set up vimwiki
 " let g:vimwiki_list = [{'path': '~/org/', 'syntax': 'markdown', 'ext': '.md'}]
 
-" use our colorscheme
-colorscheme wombat
-
 " change the cursor appearance depending on mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let &t_SI = "\<Esc>[6 q"
@@ -235,3 +232,9 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 " and hide the usual indicator
 set noshowmode
+
+" cursor highlighting done properly
+hi CursorLine ctermbg=255 cterm=none
+hi CursorColumn ctermbg=255 cterm=none
+set cursorcolumn
+set cursorline

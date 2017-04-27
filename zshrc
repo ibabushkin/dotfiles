@@ -54,7 +54,7 @@ zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
+zstyle ':completion:*:descriptions' format '%U%F{blue}%d%f%u'
 
 # if running as root and nice >0, renice to 0
 if [ "$USER" = 'root' ] && [ "$(cut -d ' ' -f 19 /proc/$$/stat)" -gt 0 ]; then
@@ -108,9 +108,9 @@ eval $(dircolors ~/.dircolors)
 # mode-aware arrow
 function p_arrow {
     if [[ $KEYMAP = "vicmd" ]]; then
-        echo "%{%F{magenta}%}>%{%f%}"
+        echo "%{%F{magenta}%B%}>%{%b%f%}"
     else
-        echo "%{%F{cyan}%}>%{%f%}"
+        echo "%{%F{blue}%B%}>%{%b%f%}"
     fi
 }
 
@@ -118,7 +118,7 @@ function p_arrow {
 function p_status {
     local res=$?
     if [ $res -ne 0 ]; then
-        echo "%{%F{red}%}[$res]%{%f%F{cyan}%}-%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
+        echo "%{%F{red}%}[$res]%{%f%F{blue}%}-%{%f%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
     else
         echo "%{%F{green}%}[%{%f%}%T%{%F{green}%}]%{%f%}"
     fi
@@ -126,7 +126,7 @@ function p_status {
 
 # git info
 function p_vcs {
-    zstyle ':vcs_info:git*' formats "%{%F{cyan}%}-%{%f%}[%s:%{%F{green}%}%b%{%f%}]%{%F{red}%}%u%{%f%F{yellow}%}%c%{%f%}"
+    zstyle ':vcs_info:git*' formats "%{%F{blue}%}-%{%f%}[%s:%{%B%F{green}%}%b%{%%b%f%}]%{%F{red}%}%u%{%f%F{yellow}%}%c%{%f%}"
     zstyle ':vcs_info:git*' check-for-changes 1
     vcs_info
     echo $vcs_info_msg_0_
@@ -137,7 +137,7 @@ function precmd {
     FILLBAR=""
     PWDLEN=""
 
-    slash="%{%F{cyan}%}%{/%f%}"
+    slash="%{%F{blue}%}%{/%f%}"
     current_path="${PWD/#$HOME/~}"
 
     local str="┌($current_path)$(p_vcs)$s¬"
@@ -148,12 +148,12 @@ function precmd {
     if [[ $size -gt $COLUMNS ]]; then
         ((PWDLEN=$COLUMNS - $size - 1))
     else
-        FILLBAR="%{%F{cyan}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
+        FILLBAR="%{%F{blue}%}\${(l.($COLUMNS - $size)..-.)}%{%f%}"
     fi
 
     echo ""
 }
 
 PROMPT='\
-%{%F{cyan}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{cyan}%}¬
+%{%F{blue}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{blue}%}¬
 \`-%{%f%}$(p_arrow) '
