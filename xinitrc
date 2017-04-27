@@ -4,6 +4,9 @@
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
+# fix our backlight
+~/dotfiles/scripts/backlight_fix.sh
+
 # don't beep
 which xset > /dev/null && xset -b
 
