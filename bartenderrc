@@ -1,25 +1,18 @@
 # our format string
 format = """
-%{F#cccccc}%{B#005577}
+%{F#fefbec}%{B#6e6b5e}
 {{{ tagset }}}
-%{F#005577}%{B#1c1c1c} > %{F#ff0606}
+%{F#000000}%{B#fefbec} > %{F#d73737}
 {{{ mode }}}
-%{F#005577} > %{F#657b83}
-{{{ volume }}}
+%{F#000000} > {{{ volume }}}
 {{# cmus }}
-%{F#005577} > %{F#657b83}
-{{{ cmus }}}
+%{F#000000} > {{{ cmus }}}
 {{/ cmus }}
-%{F#005577} >> %{F#ff0606}{{{ gpg_status }}}%{r}%{F#005577}<< %{F#657b83}
-{{{ net }}}
-%{F#005577} < %{F#657b83}
-{{{ load }}}
-%{F#005577} < %{F#657b83}
-{{{ memory }}}
-%{F#005577} < %{F#657b83}
-{{{ battery }}}
-%{F#005577} < %{F#657b83}
-{{{ clock }}}
+%{F#000000} >> %{F#d73737}{{{ gpg_status }}}%{r}%{F#000000}<< {{{ net }}}
+%{F#000000} < {{{ load }}}
+%{F#000000} < {{{ memory }}}
+%{F#000000} < {{{ battery }}}
+%{F#000000} < {{{ clock }}}
 """
 
 # tagsets get a FIFO, which gabelstaplerwm's stdout is redirected to
@@ -56,7 +49,7 @@ command = "~/dotfiles/scripts/load.sh"
 # memory consumption is computed inline
 [timers.memory]
 seconds = 5
-command = "free -m | awk 'NR==2{printf \"mem: %{F#268bd2}[%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'"
+command = "free -m | awk 'NR==2{printf \"mem: %{F#6684e1}[%s \", $3 } NR==3{printf \"%s MiB]\", $3 }'"
 
 # battery status is polled much less frequently
 [timers.battery]
@@ -66,6 +59,6 @@ command = "~/dotfiles/scripts/battery.sh"
 # we also get a clock with five-second precision
 [timers.clock]
 seconds = 5
-command = "date '+%a(%V), %F, %{F#268bd2}%R:%S %Z%%{F#657b83}'"
+command = "date '+%a(%V), %F, %{F#6684e1}%R:%S %Z%%{F#657b83}'"
 
 # vim: set ft=toml:

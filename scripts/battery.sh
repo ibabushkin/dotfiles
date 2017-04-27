@@ -40,9 +40,9 @@ fi
 
 if [ $perc1 -lt 20 ] && [ $status1 != "+" ]; then
     notify-send -u critical -a battery "low charge! plug the cable or swap battery!"
-    echo "bat: %{F#ff0606}$status1[$perc1%]$bat2"
+    echo "bat: %{F#d73737}$status1[$perc1%]$bat2"
 elif [ $perc1 -lt 50 ]; then
     echo "bat: %{F#dddd06}$status1[$perc1%]$bat2"
 else
-    echo "bat: %{F#268bd2}$status1[$perc1%]$bat2"
+    echo "bat: %{F#6684e1}$status1[$perc1%]$bat2"
 fi
