@@ -235,6 +235,8 @@ set noshowmode
 
 " highlighting done small
 hi StatusLine ctermfg=255 ctermbg=8
+hi StatusLineNC ctermfg=252 ctermbg=8
+hi VertSplit  ctermfg=252 ctermbg=8
 hi CursorLine ctermbg=255 cterm=none
 hi CursorColumn ctermbg=255 cterm=none
 set cursorcolumn
