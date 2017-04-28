@@ -233,7 +233,8 @@ let &t_EI = "\<Esc>[2 q"
 " and hide the usual indicator
 set noshowmode
 
-" cursor highlighting done properly
+" highlighting done small
+hi StatusLine ctermfg=255 ctermbg=8
 hi CursorLine ctermbg=255 cterm=none
 hi CursorColumn ctermbg=255 cterm=none
 set cursorcolumn
