@@ -1,6 +1,6 @@
 # our format string
 format = """
-%{F#000000}%{B#fefbec}
+%{F#000000}%{B#eeeeee}
 {{{ tagset }}} > %{F#d73737}
 {{{ mode }}}
 %{F#000000} > {{{ volume }}}
