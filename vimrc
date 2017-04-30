@@ -234,8 +234,8 @@ let &t_EI = "\<Esc>[2 q"
 set noshowmode
 
 " highlighting done small
-hi StatusLine ctermfg=255 ctermbg=8
-hi StatusLineNC ctermfg=252 ctermbg=8
+hi StatusLine ctermfg=252 ctermbg=8
+hi StatusLineNC ctermfg=255 ctermbg=8
 hi VertSplit  ctermfg=252 ctermbg=8
 hi CursorLine ctermbg=255 cterm=none
 hi CursorColumn ctermbg=255 cterm=none
