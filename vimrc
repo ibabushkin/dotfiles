@@ -33,7 +33,7 @@ set hlsearch
 filetype off
 
 " init vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " our plugins
@@ -48,8 +48,6 @@ Bundle "rust-lang/rust.vim"
 Bundle "neovimhaskell/haskell-vim"
 Bundle "cespare/vim-toml"
 Bundle "neomake/neomake"
-Bundle "vim-scripts/octave.vim--"
-Bundle "vimwiki/vimwiki"
 
 call vundle#end()
 
@@ -101,11 +99,6 @@ set lazyredraw
 
 " redraw status line as necessary
 set laststatus=2
-
-" snipmate settings
-let g:snips_author = "Inokentiy Babushkin"
-let g:snips_email = "inokentiy.babushkin@googlemail.com"
-let g:snips_github = "http://www.github.com/ibabushkin"
 
 " spelling languages
 set spelllang=en,de
@@ -222,14 +215,14 @@ nnoremap <C-Z> :InsertTimestampExact
 let g:netrw_banner = 0
 let g:netrw_winsize = 30
 
-" set up vimwiki
-" let g:vimwiki_list = [{'path': '~/org/', 'syntax': 'markdown', 'ext': '.md'}]
+" for old versions of nvim
+" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" let &t_SI = "\<Esc>[6 q"
+" let &t_SR = "\<Esc>[4 q"
+" let &t_EI = "\<Esc>[2 q"
 
 " change the cursor appearance depending on mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 " and hide the usual indicator
 set noshowmode
 
