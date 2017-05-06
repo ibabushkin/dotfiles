@@ -34,6 +34,14 @@ set hlsearch
 set number
 set relativenumber
 set clipboard=unnamedplus
+set ignorecase
+set smartcase
+
+" highlight stuff overflowing textwidth
+set colorcolumn=+1
+
+" allow editing multiple buffers properly
+set hidden
 
 " show some nonprintable characters
 set list
@@ -109,26 +117,31 @@ onoremap <C-O> <CR>
 lnoremap <C-O> <CR>
 cnoremap <C-O> <CR>
 
-" use H and L to move to the beginning and end of a line, respectively
-nnoremap H ^
-onoremap H ^
-xnoremap H ^
-nnoremap L $
-onoremap L $
-xnoremap L $
+" quick jumping to matching bracket
+nnoremap <tab> %
+vnoremap <tab> %
 
-" rebind arrowkeys to more useful things
-noremap <Left> :tabp<CR>
-noremap <Right> :tabn<CR>
-noremap <Up> :bn<CR>
-noremap <Down> :bp<CR>
+" map our leader key
+let mapleader = " "
+let g:mapleader = " "
 
-" use gb as a quick way to move between buffers
-nnoremap gb :ls<CR>:b<Space>
+" clear search
+nnoremap <leader>/ :nohlsearch<Bar>:echo<CR>
 
 " map timestamp functions to keys
-nnoremap <C-T> :InsertTimestamp
-nnoremap <C-Z> :InsertTimestampExact
+nnoremap <leader>T :InsertTimestamp<Space>
+nnoremap <leader>Z :InsertTimestampExact<Space>
+
+" map some keys to perform longer movements
+nnoremap <leader>h ^
+onoremap <leader>h ^
+xnoremap <leader>h ^
+nnoremap <leader>l $
+onoremap <leader>l $
+xnoremap <leader>l $
+
+" a quick way to move between buffers
+nnoremap <leader>b :ls<CR>:b<Space>
 
 " haskell highlighting and indentation
 let g:haskell_enable_quantification = 1
