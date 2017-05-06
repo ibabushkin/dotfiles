@@ -3,32 +3,6 @@
 " this must be first, because it changes other options as a side effect
 set nocompatible
 
-" default encoding
-set encoding=utf-8
-
-" don't use backup files
-set nobackup
-
-" keep a history of 50 commands
-set history=50
-
-" show current file position in the status line
-set ruler
-
-" don't use ex mode
-map Q <NOP>
-
-" <C-U> in insert mode deletes a lot.  Use <C-G> u to first break undo,
-" so that you can undo <C-U> after inserting a line break
-inoremap <C-U> <C-G>u<C-U>
-
-" use syntax highlight
-syntax on
-
-" use incremental search and highlight results
-set incsearch
-set hlsearch
-
 " vundle will shit it's pants if we don't
 filetype off
 
@@ -51,40 +25,17 @@ Bundle "neomake/neomake"
 
 call vundle#end()
 
-filetype plugin indent on
-augroup filetypedetect
-  au BufRead,BufNewFile *.thy setfiletype isabelle
-augroup END
-
-augroup vimrcEx
-au!
-
-set textwidth=89
-autocmd FileType text setlocal textwidth=78
-
-autocmd BufReadPost *
-\ if line("'\"") > 1 && line("'\"") <= line("$") |
-\   exe "normal! g`\"" |
-\ endif
-
-augroup END
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
-" give us rad relative line numbers and show us the current absolute
+set encoding=utf-8
+set nobackup
+set history=50
+syntax on
+set incsearch
+set hlsearch
 set number
 set relativenumber
-
-" use system clipboard
 set clipboard=unnamedplus
 
-" show some special characters
+" show some nonprintable characters
 set list
 set listchars=tab:>\ ,eol:¬
 
@@ -102,6 +53,33 @@ set laststatus=2
 
 " spelling languages
 set spelllang=en,de
+
+" show current file position in the status line
+set ruler
+
+" give us a nice margin to the window border
+set scrolloff=16
+
+" convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" isabelle filetype detection
+filetype plugin indent on
+augroup filetypedetect
+  au BufRead,BufNewFile *.thy setfiletype isabelle
+augroup END
+
+" don't use ex mode
+map Q <NOP>
+
+" <C-U> in insert mode deletes a lot.  Use <C-G> u to first break undo,
+" so that you can undo <C-U> after inserting a line break
+inoremap <C-U> <C-G>u<C-U>
 
 " get rid of arrow keys and backspace
 inoremap <BS> <NOP>
@@ -131,9 +109,6 @@ onoremap <C-O> <CR>
 lnoremap <C-O> <CR>
 cnoremap <C-O> <CR>
 
-" give us a nice margin to the window border
-set scrolloff=16
-
 " use H and L to move to the beginning and end of a line, respectively
 nnoremap H ^
 onoremap H ^
@@ -141,10 +116,6 @@ xnoremap H ^
 nnoremap L $
 onoremap L $
 xnoremap L $
-
-" TODO: find out what this does
-map <ESC>Od <C-Left>
-map <ESC>Oc <C-Right>
 
 " rebind arrowkeys to more useful things
 noremap <Left> :tabp<CR>
@@ -154,6 +125,10 @@ noremap <Down> :bp<CR>
 
 " use gb as a quick way to move between buffers
 nnoremap gb :ls<CR>:b<Space>
+
+" map timestamp functions to keys
+nnoremap <C-T> :InsertTimestamp
+nnoremap <C-Z> :InsertTimestampExact
 
 " haskell highlighting and indentation
 let g:haskell_enable_quantification = 1
@@ -176,8 +151,8 @@ autocmd! BufWritePost * Neomake
 " enabled makers for haskell
 let g:neomake_haskell_enabled_makers = ['hlint', 'hdevtools']
 
+" disabled rust and cpp makers
 let g:neomake_rust_enabled_makers = []
-
 let g:neomake_cpp_enabled_makers = []
 
 " parameters for clang
@@ -207,24 +182,19 @@ augroup my_info_signs
   au!
   autocmd ColorScheme * hi NeomakeInfoSign ctermbg=none
 
-" map timestamp functions to keys
-nnoremap <C-T> :InsertTimestamp
-nnoremap <C-Z> :InsertTimestampExact
-
 " set up our file explorer
 let g:netrw_banner = 0
 let g:netrw_winsize = 30
+
+" change the cursor appearance depending on mode and hide the usual indicator
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+set noshowmode
 
 " for old versions of nvim
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " let &t_SI = "\<Esc>[6 q"
 " let &t_SR = "\<Esc>[4 q"
 " let &t_EI = "\<Esc>[2 q"
-
-" change the cursor appearance depending on mode
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-" and hide the usual indicator
-set noshowmode
 
 " highlighting done small
 hi StatusLine ctermfg=252 ctermbg=8
