@@ -117,6 +117,9 @@ onoremap <C-O> <CR>
 lnoremap <C-O> <CR>
 cnoremap <C-O> <CR>
 
+cnoremap <C-K> <Up>
+cnoremap <C-J> <Down>
+
 " quick jumping to matching bracket
 nnoremap <tab> %
 vnoremap <tab> %
