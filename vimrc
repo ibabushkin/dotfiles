@@ -82,27 +82,15 @@ augroup filetypedetect
   au BufRead,BufNewFile *.thy setfiletype isabelle
 augroup END
 
+" jump to the last position after a restart
+autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
+
 " don't use ex mode
 map Q <NOP>
 
 " <C-U> in insert mode deletes a lot.  Use <C-G> u to first break undo,
 " so that you can undo <C-U> after inserting a line break
 inoremap <C-U> <C-G>u<C-U>
-
-" get rid of arrow keys and backspace
-inoremap <BS> <NOP>
-noremap <Up> <NOP>
-vnoremap <Up> <NOP>
-inoremap <Up> <NOP>
-noremap <Down> <NOP>
-vnoremap <Down> <NOP>
-inoremap <Down> <NOP>
-noremap <Left> <NOP>
-vnoremap <Left> <NOP>
-inoremap <Left> <NOP>
-noremap <Right> <NOP>
-vnoremap <Right> <NOP>
-inoremap <Right> <NOP>
 
 " insert tab character when needed
 inoremap <S-Tab> <C-V><Tab>
@@ -117,6 +105,7 @@ onoremap <C-O> <CR>
 lnoremap <C-O> <CR>
 cnoremap <C-O> <CR>
 
+" history navigation in a more convenient fashion
 cnoremap <C-K> <Up>
 cnoremap <C-J> <Down>
 
