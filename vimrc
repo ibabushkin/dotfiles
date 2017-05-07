@@ -22,6 +22,7 @@ Bundle "rust-lang/rust.vim"
 Bundle "neovimhaskell/haskell-vim"
 Bundle "cespare/vim-toml"
 Bundle "neomake/neomake"
+Bundle "tpope/vim-commentary"
 
 call vundle#end()
 
@@ -134,6 +135,9 @@ xnoremap <leader>l $
 
 " a quick way to move between buffers
 nnoremap <leader>b :ls<CR>:b<Space>
+
+" reload configuration file
+nnoremap <leader>v :so ~/.vimrc<CR>
 
 " haskell highlighting and indentation
 let g:haskell_enable_quantification = 1
