@@ -31,14 +31,10 @@ setHM() {
 
 setHM
 
-if [ $HM -gt 720 ]; then # t > 12:00
-    for _ in $(jot $((1440 - HM)));  do
-        S=$((S+INC))
-    done
-else # t <= 12:00
-    for _ in $(jot $HM); do
-        S=$((S+INC))
-    done
+if [ $HM -gt 720 ]; then
+    S=$(( S + INC * (1440 - HM) ))
+else
+    S=$(( S + INC * HM ))
 fi
 
 while true; do
