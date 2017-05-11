@@ -7,6 +7,9 @@ autocutsel -selection PRIMARY -fork &
 # fix our backlight
 ~/dotfiles/scripts/backlight_fix.sh
 
+# start sct daemon
+~/dotfiles/sct/sctd.sh &
+
 # don't beep
 which xset > /dev/null && xset -b
 
