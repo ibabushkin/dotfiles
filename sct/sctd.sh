@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Copyright (c) 2017 Aaron Bieber <aaron@bolddaemon.com>
+# Copryright (c) 2017 Inokentiy Babushkin <twk@twki,de>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -14,8 +15,10 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-S=4500
-INC=2
+TEMP_MIN=3000
+TEMP_MAX=6500
+
+INC=$(((TEMP_MAX - TEMP_MIN) / 720))
 SCT=$(which sct)
 
 if [ ! -e "$SCT" ]; then
@@ -29,24 +32,25 @@ setHM() {
     HM=$((H*60 + M))
 }
 
-setHM
+setTEMP() {
+    if [ $HM -gt 720 ]; then
+        TEMP=$(( TEMP_MIN + INC * (1440 - HM) ))
+    else
+        TEMP=$(( TEMP_MIN + INC * HM ))
+    fi
+}
 
-if [ $HM -gt 720 ]; then
-    S=$(( S + INC * (1440 - HM) ))
-else
-    S=$(( S + INC * HM ))
-fi
+tick() {
+    setHM
+    setTEMP
+
+    $SCT $TEMP
+}
+
+tick
+[ "$1" = "oneshot" ] && exit 0
 
 while true; do
-    setHM
-
-    if [ $HM -gt 720 ]; then
-        S=$((S-INC))
-    else
-        S=$((S+INC))
-    fi
-
-    $SCT $S
-
-    sleep 60
+    tick
+    sleep 600
 done
