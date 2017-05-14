@@ -7,6 +7,9 @@ if [ "$1" = "stop" ] || [ "$1" = "restart" ]; then
         dunst)
             killall dunst
             ;;
+        sct)
+            pkill sctd
+            ;;
     esac
 fi
 
@@ -23,5 +26,7 @@ if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
     dunst)
         dunst -shrink &
         ;;
+    sct)
+        ~/dotfiles/sct/sctd.sh > /dev/null &
     esac
 fi
