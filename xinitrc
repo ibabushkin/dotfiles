@@ -17,6 +17,6 @@ which setxkbmap > /dev/null && setxkbmap -option caps:swapescape
 ~/dotfiles/scripts/control.sh restart bar
 ~/dotfiles/scripts/control.sh restart dunst
 ~/dotfiles/scripts/control.sh restart sct
-bgs -z ~/dotfiles/background.jpg &
+bgs ~/dotfiles/background.jpg &
 swarp 0 900 &
 RUST_BACKTRACE=1 RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
