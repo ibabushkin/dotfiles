@@ -38,6 +38,7 @@ set clipboard=unnamedplus
 set ignorecase
 set smartcase
 set wrap
+set nomodeline
 
 " highlight stuff overflowing textwidth
 set colorcolumn=+1
