@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/sh
+
+# default screen config
+xrandr --output VGA1 --off
 
 # clipboard management
 autocutsel -fork &
