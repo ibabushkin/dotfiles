@@ -8,3 +8,4 @@ killall -SIGUSR1 dunst
 ~/dotfiles/scripts/pom.sh -p && slock && ~/dotfiles/scripts/pom.sh -p
 [ $cmus_status -eq 0 ] && cmus-remote -u
 killall -SIGUSR2 dunst
+~/dotfiles/scripts/backlight_fix.sh
