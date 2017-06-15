@@ -1,8 +1,11 @@
 #!/bin/sh
 val=$(doas intel_reg read 0x00061254 2> /dev/null | sed "s/.*: 0x//")
+echo "$val"
 
-if [ "$(echo $val | cut -c 1-4)" = "0610" ]; then
-    field="$(echo $val | cut -c 5-8)"
+if [ "$(echo "$val" | cut -c 1-4)" = "0610" ]; then
+    field="$(echo "$val" | cut -c 5-8)"
+    echo "$field"
+    new="6000"
     case $field in
         "040f")
             new="6000"
