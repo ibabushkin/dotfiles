@@ -80,6 +80,9 @@ augroup END
 " jump to the last position after a restart
 autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
 
+" equalize splits on window resize
+autocmd VimResized * wincmd =
+
 " don't use ex mode
 map Q <NOP>
 
