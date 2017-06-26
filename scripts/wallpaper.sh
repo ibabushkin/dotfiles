@@ -6,7 +6,8 @@ random() {
 }
 
 tick() {
-    bgs -z "$(find ~/dotfiles/wallpapers/ -regex ".*\(jpg\|png\)" | grep -v "old" | random)"
+    img=$(find ~/dotfiles/wallpapers/ -regex ".*\(jpg\|png\)" | grep -v "old" | random)
+    bgs -z "$img" > /dev/null 2>&1
 }
 
 tick
