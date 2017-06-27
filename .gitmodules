@@ -7,3 +7,6 @@
 [submodule "tmux-url-select"]
 	path = tmux-url-select
 	url = https://github.com/ibabushkin/tmux-url-select
+[submodule "gdb-dashboard"]
+	path = gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard
