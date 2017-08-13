@@ -133,6 +133,10 @@ xnoremap <leader>l $
 " a quick way to move between buffers
 nnoremap <leader>b :ls<CR>:b<Space>
 
+" a less quick, but similarly useful way to move between marks
+nnoremap <leader>' :marks<CR>:normal!'
+nnoremap <leader>` :marks<CR>:normal!`
+
 " reload configuration file
 nnoremap <leader>v :so ~/.vimrc<CR>
 
