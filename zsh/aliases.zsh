@@ -8,6 +8,7 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 
 alias cmus='cmus && echo "" > ~/tmp/cmus_fifo'
+alias hledger='hledger -f ~/org/hledger.journal'
 alias killgpg='gpgconf --kill gpg-agent && echo "" > ~/tmp/gpg_status_fifo'
 
 alias backlight='~/dotfiles/scripts/backlight_fix.sh'
