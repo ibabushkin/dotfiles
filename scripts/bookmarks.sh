@@ -3,6 +3,9 @@ fzy=false
 if [ "$1" = "fzy" ]; then
     fzy=true
     shift
+elif [ "$1" = "dmenu" ]; then
+    dmenu=true
+    shift
 fi
 
 case "$1" in
@@ -13,6 +16,9 @@ shift
 
 if $fzy; then
     cat "$@" | fzy | sed -r "s/^# .*$//
+    s/^ *\* (.* :: )*//"
+elif $dmenu; then
+    cat "$@" | dmenu -n -i -y 20 -l 20 | sed -r "s/^# .*$//
     s/^ *\* (.* :: )*//"
 else
     sed -r "s/^# .*$//
