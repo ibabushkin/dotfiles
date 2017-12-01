@@ -11,7 +11,7 @@ autocutsel -selection PRIMARY -fork &
 ~/dotfiles/scripts/backlight_fix.sh
 
 # don't beep
-which xset > /dev/null && xset -b
+which xset > /dev/null && xset b off
 
 # swap caps lock and escape
 which setxkbmap > /dev/null && setxkbmap -option caps:swapescape
