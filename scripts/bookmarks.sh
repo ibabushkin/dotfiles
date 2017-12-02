@@ -15,10 +15,10 @@ esac
 shift
 
 if $fzy; then
-    cat "$@" | fzy | sed -r "s/^# .*$//
+    cat "$@" | grep "::" | sort | fzy | sed -r "s/^# .*$//
     s/^ *\* (.* :: )*//"
 elif $dmenu; then
-    cat ~/org/bookmarks/* | dmenu -n -i -y 20 -l 20 | sed -r "s/^# .*$//
+    cat ~/org/bookmarks/* | grep "::" | sort| dmenu -n -i -y 20 -l 20 | sed -r "s/^# .*$//
     s/^ *\* (.* :: )*//"
 else
     sed -r "s/^# .*$//
