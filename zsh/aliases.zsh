@@ -9,6 +9,7 @@ alias egrep='egrep --colour=auto'
 
 alias cmus='cmus && echo "" > ~/tmp/cmus_fifo'
 alias hledger='hledger -f ~/org/hledger.journal'
+alias cformat='clang-format -style=file'
 alias killgpg='gpgconf --kill gpg-agent && echo "" > ~/tmp/gpg_status_fifo'
 
 alias backlight='~/dotfiles/scripts/backlight_fix.sh'
@@ -22,4 +23,3 @@ if command -v colordiff > /dev/null 2>&1; then
 else
     alias diff="diff -Nuar"
 fi
-

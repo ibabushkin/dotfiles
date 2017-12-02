@@ -1,4 +1,4 @@
 set tabstop=4
-" set expandtab
+set textwidth=90
 set shiftwidth=4
 set softtabstop=4
