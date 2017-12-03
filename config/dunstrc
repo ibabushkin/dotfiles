@@ -1,6 +1,6 @@
 [global]
     font = monospace 12
-    allow_markup = yes
+    markup = yes
     format = "<b>%a: %s</b>\n%p %b"
     sort = yes
     indicate_hidden = yes
@@ -26,10 +26,8 @@
     dmenu = /usr/bin/dmenu -y 20 -p dunst:
     browser = /usr/bin/firefox -new-tab
     icon_position = off
-
-[frame]
-    width = 1
-    color = "#005577"
+    frame_width = 1
+    frame_color = "#005577"
 
 [shortcuts]
     close = mod4+c
