@@ -7,10 +7,13 @@ alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 
+alias ssh='(ssh-add -L > /dev/null 2>&1 || ~/dotfiles/scripts/pass.sh dummy) && ssh'
+alias mosh='(ssh-add -L > /dev/null 2>&1 || ~/dotfiles/scripts/pass.sh dummy) && mosh'
+
 alias cmus='cmus && echo "" > ~/tmp/cmus_fifo'
 alias hledger='hledger -f ~/org/hledger.journal'
 alias cformat='clang-format -style=file'
-alias killgpg='gpgconf --kill gpg-agent && echo "" > ~/tmp/gpg_status_fifo'
+alias killgpg='kill -HUP $(pidof gpg-agent) && echo "" > ~/tmp/gpg_status_fifo'
 
 alias backlight='~/dotfiles/scripts/backlight_fix.sh'
 alias bookmarks='~/dotfiles/scripts/bookmarks.sh'
