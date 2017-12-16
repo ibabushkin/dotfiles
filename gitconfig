@@ -8,6 +8,7 @@
 	gpgsign = true
 [core]
 	editor = nvim
+	sshCommand = (ssh-add -L > /dev/null 2>&1 || ~/dotfiles/scripts/pass.sh dummy) && ssh
 [credential]
 	helper = cache --timeout=3600
 [gpg]
