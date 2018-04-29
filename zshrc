@@ -20,8 +20,14 @@ if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
 
 # le features!
 
+# show PIDs when suspending
+setopt longlistjobs
+
 # awesome extended globbing
 setopt extended_glob
+
+# complete in the middle of words
+setopt completeinword
 
 # zmv -  a command for renaming files by means of shell patterns
 autoload -U zmv
@@ -157,3 +163,6 @@ function precmd {
 PROMPT='\
 %{%F{blue}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{blue}%}¬
 \`-%{%f%}$(p_arrow) '
+
+# report command executions taking longer than 5 seconds
+REPORTTIME=5
