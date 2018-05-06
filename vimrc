@@ -23,6 +23,7 @@ Bundle "neovimhaskell/haskell-vim"
 Bundle "cespare/vim-toml"
 Bundle "neomake/neomake"
 Bundle "tpope/vim-commentary"
+Bundle "lervag/vimtex"
 
 call vundle#end()
 
@@ -209,6 +210,12 @@ set noshowmode
 set cursorcolumn
 set cursorline
 
+" vimtex settings
+let g:vimtex_compiler_enabled=0
+let g:vimtex_complete_enabled=0
+let g:vimtex_disable_recursive_main_file_detection=1
+let g:vimtex_view_enabled=0
+
 " highlighting done small
 " colors adapted from nofrils-light (https://github.com/robertmeta/nofrils)
 
@@ -242,7 +249,7 @@ hi Directory term=NONE cterm=NONE ctermfg=53 ctermbg=NONE gui=NONE guifg=#5F005F
 hi ErrorMsg term=NONE cterm=NONE ctermfg=9 ctermbg=white gui=NONE guifg=#FF5555 guibg=white
 hi Error term=NONE cterm=NONE ctermfg=9 ctermbg=white gui=NONE guifg=#FF5555 guibg=white
 hi IncSearch term=NONE cterm=NONE ctermfg=black ctermbg=252 gui=NONE guifg=white guibg=#008000
-hi MatchParen term=NONE cterm=NONE ctermfg=15 ctermbg=4 gui=NONE guifg=#ffffff guibg=#000080
+hi MatchParen term=NONE cterm=NONE ctermfg=NONE ctermbg=7 gui=NONE guifg=#ffffff guibg=#000080
 hi ModeMsg term=NONE cterm=NONE ctermfg=53 ctermbg=NONE gui=NONE guifg=#5F005F guibg=NONE
 hi MoreMsg term=NONE cterm=NONE ctermfg=53 ctermbg=NONE gui=NONE guifg=#5F005F guibg=NONE
 hi PmenuSel term=NONE cterm=NONE ctermfg=fg ctermbg=13 gui=NONE guifg=fg guibg=#FF00FF
@@ -268,10 +275,10 @@ hi DiffDelete term=NONE cterm=NONE ctermfg=1 ctermbg=NONE gui=NONE guifg=#800000
 hi DiffText term=NONE cterm=NONE ctermfg=4 ctermbg=NONE gui=NONE guifg=#000080 guibg=NONE
 
 " Spell
-hi SpellBad term=underline cterm=underline ctermfg=5 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
-hi SpellCap term=underline cterm=underline ctermfg=5 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
-hi SpellLocal term=underline cterm=underline ctermfg=5 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
-hi SpellRare term=underline cterm=underline ctermfg=5 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
+hi SpellBad term=underline cterm=underline ctermfg=9 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
+hi SpellCap term=underline cterm=underline ctermfg=9 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
+hi SpellLocal term=underline cterm=underline ctermfg=9 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
+hi SpellRare term=underline cterm=underline ctermfg=9 ctermbg=NONE gui=underline guifg=#CD00CD guibg=NONE
 
 " Vim Features
 hi Menu term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
