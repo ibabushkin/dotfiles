@@ -49,7 +49,7 @@ set hidden
 
 " show some nonprintable characters
 set list
-set listchars=tab:>\ ,eol:¬
+set listchars=tab:>·,eol:¬
 
 " show us the commands we type
 set showcmd
@@ -225,17 +225,17 @@ if exists("syntax_on")
 endif
 
 " Baseline
-hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=256 gui=NONE guifg=#000000 guibg=#E4E4E4
+hi Normal term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=#000000 guibg=#E4E4E4
 
 " Faded
 hi ColorColumn term=NONE cterm=NONE ctermfg=NONE ctermbg=253 gui=NONE guifg=NONE guibg=#DADADA
 hi Comment term=NONE cterm=NONE ctermfg=4 ctermbg=NONE gui=NONE guifg=#A8A8A8 guibg=NONE
 hi FoldColumn term=NONE cterm=NONE ctermfg=248 ctermbg=NONE gui=NONE guifg=#A8A8A8 guibg=NONE
 hi Folded term=NONE cterm=NONE ctermfg=240 ctermbg=NONE gui=NONE guifg=#585858 guibg=NONE
-hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=bg gui=NONE guifg=#A8A8A8 guibg=NONE
+hi LineNr term=NONE cterm=NONE ctermfg=8 ctermbg=NONE gui=NONE guifg=#A8A8A8 guibg=NONE
 hi NonText term=NONE cterm=NONE ctermfg=248 ctermbg=NONE gui=NONE guifg=#A8A8A8 guibg=NONE
-hi SignColumn term=NONE cterm=NONE ctermfg=240 ctermbg=bg gui=NONE guifg=#585858 guibg=bg
-hi SpecialKey term=NONE cterm=NONE ctermfg=240 ctermbg=bg gui=NONE guifg=#585858 guibg=bg
+hi SignColumn term=NONE cterm=NONE ctermfg=240 ctermbg=NONE gui=NONE guifg=#585858 guibg=bg
+hi SpecialKey term=NONE cterm=NONE ctermfg=240 ctermbg=NONE gui=NONE guifg=#585858 guibg=bg
 hi StatusLineNC term=NONE cterm=NONE ctermfg=8 ctermbg=255 gui=NONE guifg=fg guibg=#A8A8A8
 hi VertSplit term=NONE cterm=NONE ctermfg=fg ctermbg=252 gui=NONE guifg=fg guibg=#A8A8A8
 
