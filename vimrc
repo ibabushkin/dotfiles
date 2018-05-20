@@ -216,6 +216,19 @@ let g:vimtex_complete_enabled=0
 let g:vimtex_disable_recursive_main_file_detection=1
 let g:vimtex_view_enabled=0
 
+" local settings for the somewhat unusual LLVM codestyle
+function! SetupEnvironment()
+  let l:path = expand('%:p')
+  if l:path =~ 'llvm'
+    set tabstop=2
+    set textwidth=90
+    set shiftwidth=2
+    set softtabstop=2
+    set expandtab
+  endif
+endfunction
+autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
+
 " highlighting done small
 " colors adapted from nofrils-light (https://github.com/robertmeta/nofrils)
 
