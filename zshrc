@@ -114,9 +114,9 @@ eval $(dircolors ~/.dircolors)
 # mode-aware arrow
 function p_arrow {
     if [[ $KEYMAP = "vicmd" ]]; then
-        echo "%{%F{magenta}%B%}>%{%b%f%}"
+        echo "%{%F{magenta}%B%}%#%{%b%f%}"
     else
-        echo "%{%F{blue}%B%}>%{%b%f%}"
+        echo "%{%F{blue}%B%}%#%{%b%f%}"
     fi
 }
 
@@ -162,7 +162,7 @@ function precmd {
 
 PROMPT='\
 %{%F{blue}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{blue}%}¬
-\`-%{%f%}$(p_arrow) '
+\`%{%f%}$(p_arrow) '
 
 # report command executions taking longer than 5 seconds
 REPORTTIME=5
