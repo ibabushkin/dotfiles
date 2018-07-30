@@ -24,6 +24,7 @@ Bundle "cespare/vim-toml"
 Bundle "neomake/neomake"
 Bundle "tpope/vim-commentary"
 Bundle "lervag/vimtex"
+Bundle "gilligan/vim-lldb"
 
 call vundle#end()
 
