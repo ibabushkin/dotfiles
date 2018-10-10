@@ -6,3 +6,4 @@ telegram,Telegram
 mutt,st -c Mail -e tmux new -s mutt neomutt
 cmus,st -c Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
 htop,st -c Mon -e tmux new -s htop htop
+freecad,FreeCAD
