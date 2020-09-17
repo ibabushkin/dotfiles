@@ -164,5 +164,12 @@ PROMPT='\
 %{%F{blue}%},%{%f%}(%$PWDLEN<...<${${current_path}//\//$slash}%<<)$(p_vcs)${(e)FILLBAR}$s%{%F{blue}%}¬
 \`%{%f%}$(p_arrow) '
 
+export GPG_TTY=$(tty)
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
 # report command executions taking longer than 5 seconds
 REPORTTIME=5
