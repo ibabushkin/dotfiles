@@ -1,6 +1,6 @@
 #!/bin/sh
 # read in the currently active tmux sessions
-session=$(tmux list-sessions | dmenu -n -i -y 20 -l 20 | cut -d : -f 1)
+session=$(tmux list-sessions | dmenu -i -l 20 | cut -d : -f 1)
 
 [ -z "$session" ] && exit 0
 
