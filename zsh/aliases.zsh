@@ -14,6 +14,7 @@ alias cmus='cmus && echo "" > ~/tmp/cmus_fifo'
 alias hledger='hledger -f ~/org/hledger.journal'
 alias cformat='clang-format -style=file'
 alias killgpg='kill -HUP $(pidof gpg-agent) && echo "" > ~/tmp/gpg_status_fifo'
+alias refreshgpg='gpg-connect-agent updatestartuptty /bye'
 
 alias backlight='~/dotfiles/scripts/backlight_fix.sh'
 alias bookmarks='~/dotfiles/scripts/bookmarks.sh'
