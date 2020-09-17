@@ -3,8 +3,8 @@
 # setup a gpg-agent for SSH and OpenPGP key storage
 # if this turns out to be not enough at some point, we can always just use something like
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --kill gpg-agent
-eval "$(gpg-agent --daemon --enable-ssh-support -s)"
+# gpgconf --kill gpg-agent
+# eval "$(gpg-agent --daemon --enable-ssh-support -s)"
 
 # default screen config
 xrandr --output VGA1 --off
