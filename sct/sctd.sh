@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Copyright (c) 2017 Aaron Bieber <aaron@bolddaemon.com>
-# Copryright (c) 2017 Inokentiy Babushkin <twk@twki.de>
+# Copyright (c) 2017 Inokentiy Babushkin <twk@twki.de>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -15,7 +15,7 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-TEMP_MIN=2000
+TEMP_MIN=1500
 TEMP_MAX=6500
 
 INC=$(((TEMP_MAX - TEMP_MIN) / 720))
