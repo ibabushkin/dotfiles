@@ -4,4 +4,4 @@ session=$(tmux list-sessions | dmenu -i -l 20 | cut -d : -f 1)
 
 [ -z "$session" ] && exit 0
 
-st tmux attach -t "$session" 2> /dev/null
+alacritty -e tmux attach -t "$session" 2> /dev/null
