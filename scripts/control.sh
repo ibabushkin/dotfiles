@@ -24,7 +24,8 @@ if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
         if pgrep gpg-agent > /dev/null; then
             echo "+" > ~/tmp/gpg_status_fifo
         fi
-        ~/dotfiles/scripts/network.sh > ~/tmp/net_fifo &
+        FIFO="$HOME/tmp/net_fifo"
+        flock "$FIFO" -c "$HOME/dotfiles/scripts/network.sh > $FIFO" &
         ;;
     dunst)
         dunst -shrink &
@@ -33,7 +34,8 @@ if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
         ~/dotfiles/sct/sctd.sh > /dev/null &
         ;;
     wallpaper)
-        ~/dotfiles/scripts/wallpaper.sh > /dev/null &
+        bgs -z "$HOME/dotfiles/wallpapers/naptime.png" > /dev/null 2>&1
+        # ~/dotfiles/scripts/wallpaper.sh > /dev/null &
         ;;
     esac
 fi
