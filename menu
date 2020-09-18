@@ -1,10 +1,10 @@
 emacs,emacs
 firefox,firefox
 chromium,chromium
-weechat,alacritty --class Chat -e tmux new -s weechat mosh blender-global-ipv4 -- tmux new -A -s weechat weechat
+weechat,st --class Chat -e tmux new -s weechat mosh blender-global-ipv4 -- tmux new -A -s weechat weechat
 telegram,telegram-desktop
-cmus,alacritty --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
-htop,alacritty --class Mon -e tmux new -s htop htop
+cmus,st --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
+htop,st --class Mon -e tmux new -s htop htop
 freecad,FreeCAD
 openscad,openscad
 matrix,element-desktop

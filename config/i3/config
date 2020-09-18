@@ -30,13 +30,13 @@ font termsyn 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+i exec "alacritty -e tmux"
+bindsym $mod+i exec "st -e tmux"
 
 # get us a password
 bindsym $mod+e exec "passmenu"
 
 # move the mouse pointer out of the way
-bindsym $mod+z exec "swarp 0 1080"
+bindsym $mod+z exec "swarp 0 900"
 
 # kill focused window
 bindsym $mod+Shift+q kill

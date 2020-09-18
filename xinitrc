@@ -22,11 +22,9 @@ which xset > /dev/null && xset b off
 # swap caps lock and escape
 which setxkbmap > /dev/null && setxkbmap -option caps:swapescape
 
-# start the window manager and some other stuff
-~/dotfiles/scripts/control.sh restart bar
-~/dotfiles/scripts/control.sh restart dunst
 ~/dotfiles/scripts/control.sh restart sct
-~/dotfiles/scripts/control.sh restart wallpaper
+~/dotfiles/scripts/control.sh restart dunst
 
 swarp 0 900 &
-RUST_BACKTRACE=1 RUST_LOG=debug exec gabelstaplerwm 2> ~/wm_log > ~/tmp/tagset_fifo
+~/dotfiles/scripts/control.sh start wallpaper &
+exec i3
