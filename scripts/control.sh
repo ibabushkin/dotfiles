@@ -2,7 +2,7 @@
 if [ "$1" = "stop" ] || [ "$1" = "restart" ]; then
     case $2 in
         dunst)
-            killall dunst
+            pkill dunst
             ;;
         sct)
             pkill sctd
