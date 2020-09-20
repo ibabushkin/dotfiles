@@ -1,6 +1,6 @@
 #!/bin/sh
 line=$(sed 's/,.*//' ~/dotfiles/workspace_cache | sort |
-dmenu -n -i -y 20 | xargs -I{} grep {}, ~/dotfiles/workspace_cache)
+rofi -dmenu -n -i | xargs -I{} grep {}, ~/dotfiles/workspace_cache)
 
 [ -z "$line" ] && exit 0
 
