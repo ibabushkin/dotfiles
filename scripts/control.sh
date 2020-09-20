@@ -22,7 +22,7 @@ if [ "$1" = "start" ] || [ "$1" = "restart" ]; then
         ~/dotfiles/sct/sctd.sh > /dev/null &
         ;;
     wallpaper)
-        bgs -z "$HOME/dotfiles/wallpapers/naptime.png" > /dev/null 2>&1
+        bgs -z "$HOME/images/wallpapers/naptime.png" > /dev/null 2>&1
         ;;
     esac
 fi
