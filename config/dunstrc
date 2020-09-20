@@ -23,7 +23,7 @@
     horizontal_padding = 8
     separator_color = frame
     startup_notification = false
-    dmenu = /usr/bin/dmenu -y 20 -p dunst:
+    dmenu = /bin/rofi -dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
     icon_position = off
     frame_width = 1
