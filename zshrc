@@ -108,9 +108,6 @@ export KEYTIMEOUT=40
 # alert file warning
 if [ -f ~/.alert ]; then echo '>>> Check ~/.alert'; fi
 
-# colors for ls
-eval $(dircolors ~/.dircolors)
-
 # mode-aware arrow
 function p_arrow {
     if [[ $KEYMAP = "vicmd" ]]; then

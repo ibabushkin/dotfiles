@@ -3,7 +3,6 @@ alias rmdir='rmdir -v'
 alias ln='ln -v'
 alias chmod="chmod -c"
 alias chown="chown -c"
-alias ls='ls --color=auto --human-readable --group-directories-first --classify'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 
