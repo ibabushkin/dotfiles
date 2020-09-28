@@ -45,7 +45,6 @@ bindsym $mod+q exec "~/dotfiles/scripts/alarm.sh"
 bindsym $mod+w exec "~/dotfiles/scripts/menu.sh"
 bindsym $mod+a exec "~/dotfiles/scripts/reattach.sh"
 bindsym $mod+s exec "i3lock -i ~/images/wallpapers/forest.png && kill -HUP $(pidof gpg-agent)"
-bindsym $mod+b exec "~/dotfiles/scripts/bookmarks.sh dmenu firefox"
 bindsym $mod+Shift+i exec "~/dotfiles/scripts/capture.sh"
 
 # start rofi (a program launcher)
