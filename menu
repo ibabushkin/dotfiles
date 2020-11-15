@@ -1,12 +1,13 @@
+chromium,chromium
+cmus,alacritty --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
 element,element-desktop
 emacs,emacs
 firefox,firefox
-chromium,chromium
-weechat,alacritty --class Chat -e tmux new -s weechat mosh blender-global-ipv4 -- tmux new -A -s weechat weechat
-telegram,telegram-desktop
-cmus,alacritty --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
-htop,alacritty --class Mon -e tmux new -s htop htop
 freecad,FreeCAD
-openscad,openscad
-mumble,mumble
+htop,alacritty --class Mon -e tmux new -s htop htop
 jellyfin,jellyfin-mpv-desktop
+mumble,mumble
+openscad,openscad
+signal,signal-desktop
+telegram,telegram-desktop
+weechat,alacritty --class Chat -e tmux new -s weechat mosh blender-global-ipv4 -- tmux new -A -s weechat weechat
