@@ -1,3 +1,4 @@
+element,element-desktop
 emacs,emacs
 firefox,firefox
 chromium,chromium
@@ -7,6 +8,5 @@ cmus,alacritty --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
 htop,alacritty --class Mon -e tmux new -s htop htop
 freecad,FreeCAD
 openscad,openscad
-matrix,element-desktop
 mumble,mumble
 jellyfin,jellyfin-mpv-desktop
