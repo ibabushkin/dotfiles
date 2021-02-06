@@ -1,5 +1,5 @@
 chromium,chromium
-cmus,alacritty --class Media -e sh -c 'cmus && echo "" > $HOME/tmp/cmus_fifo'
+cmus,alacritty --class Media -e sh -c cmus
 element,element-desktop
 emacs,emacs
 firefox,firefox
