@@ -1,5 +1,6 @@
 #!/bin/zsh
 alias rmdir='rmdir -v'
+alias cp='cp --reflink=auto'
 alias ln='ln -v'
 alias chmod="chmod -c"
 alias chown="chown -c"
